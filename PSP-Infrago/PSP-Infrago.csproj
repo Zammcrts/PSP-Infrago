@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client.Designer.cs">
+      <DependentUpon>Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department.Designer.cs">
+      <DependentUpon>Department.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Department.cs" />
     <Compile Include="Entities\Machinery.cs" />
@@ -86,7 +98,37 @@
     <Compile Include="MaintenanceDetails.Designer.cs">
       <DependentUpon>MaintenanceDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Material.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material.Designer.cs">
+      <DependentUpon>Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialAssignment.Designer.cs">
+      <DependentUpon>MaterialAssignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderDetail.Designer.cs">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project.Designer.cs">
+      <DependentUpon>Project.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProjectDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +136,12 @@
       <DependentUpon>ProjectDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Provider.Designer.cs">
+      <DependentUpon>Provider.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +160,12 @@
     <Compile Include="ToolAssignment.Designer.cs">
       <DependentUpon>ToolAssignment.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Department.resx">
+      <DependentUpon>Department.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Machinery.resx">
       <DependentUpon>Machinery.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +177,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MaintenanceDetails.resx">
       <DependentUpon>MaintenanceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material.resx">
+      <DependentUpon>Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialAssignment.resx">
+      <DependentUpon>MaterialAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderDetail.resx">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project.resx">
+      <DependentUpon>Project.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectDetails.resx">
       <DependentUpon>ProjectDetails.cs</DependentUpon>
@@ -136,6 +205,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Provider.resx">
+      <DependentUpon>Provider.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Service.resx">
       <DependentUpon>Service.cs</DependentUpon>
     </EmbeddedResource>

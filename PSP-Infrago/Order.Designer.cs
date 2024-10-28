@@ -1,0 +1,345 @@
+﻿namespace PSP_Infrago
+{
+    partial class Order
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlStyle1 = new System.Windows.Forms.Panel();
+            this.grpData = new System.Windows.Forms.GroupBox();
+            this.bttNew = new System.Windows.Forms.Button();
+            this.bttCancel = new System.Windows.Forms.Button();
+            this.grpDepartment = new System.Windows.Forms.GroupBox();
+            this.rdbDepartment = new System.Windows.Forms.RadioButton();
+            this.bttUpdate = new System.Windows.Forms.Button();
+            this.bttDelete = new System.Windows.Forms.Button();
+            this.dttDeliveryDate = new System.Windows.Forms.DateTimePicker();
+            this.bttSave = new System.Windows.Forms.Button();
+            this.dttOrdeDate = new System.Windows.Forms.DateTimePicker();
+            this.txtTotalCost = new System.Windows.Forms.TextBox();
+            this.txtProvider = new System.Windows.Forms.TextBox();
+            this.txtDetails = new System.Windows.Forms.TextBox();
+            this.lblDepartment = new System.Windows.Forms.Label();
+            this.lblDeliveryDate = new System.Windows.Forms.Label();
+            this.lblOrderDate = new System.Windows.Forms.Label();
+            this.lblTotalCost = new System.Windows.Forms.Label();
+            this.lblProvider = new System.Windows.Forms.Label();
+            this.lblDetail = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.grpData.SuspendLayout();
+            this.grpDepartment.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(132)))), ((int)(((byte)(108)))));
+            this.panel1.Location = new System.Drawing.Point(-3, 569);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(959, 39);
+            this.panel1.TabIndex = 11;
+            // 
+            // pnlStyle1
+            // 
+            this.pnlStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(132)))), ((int)(((byte)(108)))));
+            this.pnlStyle1.Location = new System.Drawing.Point(-3, -1);
+            this.pnlStyle1.Name = "pnlStyle1";
+            this.pnlStyle1.Size = new System.Drawing.Size(959, 39);
+            this.pnlStyle1.TabIndex = 10;
+            // 
+            // grpData
+            // 
+            this.grpData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
+            this.grpData.Controls.Add(this.bttNew);
+            this.grpData.Controls.Add(this.bttCancel);
+            this.grpData.Controls.Add(this.grpDepartment);
+            this.grpData.Controls.Add(this.bttUpdate);
+            this.grpData.Controls.Add(this.bttDelete);
+            this.grpData.Controls.Add(this.dttDeliveryDate);
+            this.grpData.Controls.Add(this.bttSave);
+            this.grpData.Controls.Add(this.dttOrdeDate);
+            this.grpData.Controls.Add(this.txtTotalCost);
+            this.grpData.Controls.Add(this.txtProvider);
+            this.grpData.Controls.Add(this.txtDetails);
+            this.grpData.Controls.Add(this.lblDepartment);
+            this.grpData.Controls.Add(this.lblDeliveryDate);
+            this.grpData.Controls.Add(this.lblOrderDate);
+            this.grpData.Controls.Add(this.lblTotalCost);
+            this.grpData.Controls.Add(this.lblProvider);
+            this.grpData.Controls.Add(this.lblDetail);
+            this.grpData.Font = new System.Drawing.Font("Typo Grotesk", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpData.Location = new System.Drawing.Point(22, 114);
+            this.grpData.Name = "grpData";
+            this.grpData.Size = new System.Drawing.Size(914, 466);
+            this.grpData.TabIndex = 9;
+            this.grpData.TabStop = false;
+            this.grpData.Text = "Datos de la orden";
+            // 
+            // bttNew
+            // 
+            this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttNew.Location = new System.Drawing.Point(693, 407);
+            this.bttNew.Name = "bttNew";
+            this.bttNew.Size = new System.Drawing.Size(122, 33);
+            this.bttNew.TabIndex = 25;
+            this.bttNew.Text = "Nuevo";
+            this.bttNew.UseVisualStyleBackColor = false;
+            // 
+            // bttCancel
+            // 
+            this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttCancel.Location = new System.Drawing.Point(550, 407);
+            this.bttCancel.Name = "bttCancel";
+            this.bttCancel.Size = new System.Drawing.Size(122, 33);
+            this.bttCancel.TabIndex = 24;
+            this.bttCancel.Text = "Cancelar";
+            this.bttCancel.UseVisualStyleBackColor = false;
+            // 
+            // grpDepartment
+            // 
+            this.grpDepartment.Controls.Add(this.rdbDepartment);
+            this.grpDepartment.Location = new System.Drawing.Point(329, 326);
+            this.grpDepartment.Name = "grpDepartment";
+            this.grpDepartment.Size = new System.Drawing.Size(297, 61);
+            this.grpDepartment.TabIndex = 15;
+            this.grpDepartment.TabStop = false;
+            // 
+            // rdbDepartment
+            // 
+            this.rdbDepartment.AutoSize = true;
+            this.rdbDepartment.Font = new System.Drawing.Font("Typo Grotesk", 10F);
+            this.rdbDepartment.Location = new System.Drawing.Point(6, 20);
+            this.rdbDepartment.Name = "rdbDepartment";
+            this.rdbDepartment.Size = new System.Drawing.Size(242, 24);
+            this.rdbDepartment.TabIndex = 14;
+            this.rdbDepartment.TabStop = true;
+            this.rdbDepartment.Text = "Departamento de Finanzas";
+            this.rdbDepartment.UseVisualStyleBackColor = true;
+            // 
+            // bttUpdate
+            // 
+            this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttUpdate.Location = new System.Drawing.Point(403, 407);
+            this.bttUpdate.Name = "bttUpdate";
+            this.bttUpdate.Size = new System.Drawing.Size(122, 33);
+            this.bttUpdate.TabIndex = 23;
+            this.bttUpdate.Text = "Actualizar";
+            this.bttUpdate.UseVisualStyleBackColor = false;
+            // 
+            // bttDelete
+            // 
+            this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttDelete.Location = new System.Drawing.Point(258, 407);
+            this.bttDelete.Name = "bttDelete";
+            this.bttDelete.Size = new System.Drawing.Size(122, 33);
+            this.bttDelete.TabIndex = 22;
+            this.bttDelete.Text = "Eliminar";
+            this.bttDelete.UseVisualStyleBackColor = false;
+            // 
+            // dttDeliveryDate
+            // 
+            this.dttDeliveryDate.CalendarFont = new System.Drawing.Font("Typo Grotesk", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttDeliveryDate.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttDeliveryDate.Location = new System.Drawing.Point(258, 279);
+            this.dttDeliveryDate.Name = "dttDeliveryDate";
+            this.dttDeliveryDate.Size = new System.Drawing.Size(163, 34);
+            this.dttDeliveryDate.TabIndex = 12;
+            // 
+            // bttSave
+            // 
+            this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttSave.Location = new System.Drawing.Point(110, 407);
+            this.bttSave.Name = "bttSave";
+            this.bttSave.Size = new System.Drawing.Size(122, 33);
+            this.bttSave.TabIndex = 21;
+            this.bttSave.Text = "Guardar";
+            this.bttSave.UseVisualStyleBackColor = false;
+            // 
+            // dttOrdeDate
+            // 
+            this.dttOrdeDate.CalendarFont = new System.Drawing.Font("Typo Grotesk", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttOrdeDate.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttOrdeDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttOrdeDate.Location = new System.Drawing.Point(258, 214);
+            this.dttOrdeDate.Name = "dttOrdeDate";
+            this.dttOrdeDate.Size = new System.Drawing.Size(163, 34);
+            this.dttOrdeDate.TabIndex = 11;
+            // 
+            // txtTotalCost
+            // 
+            this.txtTotalCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotalCost.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalCost.Location = new System.Drawing.Point(157, 154);
+            this.txtTotalCost.Name = "txtTotalCost";
+            this.txtTotalCost.Size = new System.Drawing.Size(142, 34);
+            this.txtTotalCost.TabIndex = 10;
+            // 
+            // txtProvider
+            // 
+            this.txtProvider.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProvider.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProvider.Location = new System.Drawing.Point(157, 102);
+            this.txtProvider.Name = "txtProvider";
+            this.txtProvider.Size = new System.Drawing.Size(727, 34);
+            this.txtProvider.TabIndex = 9;
+            // 
+            // txtDetails
+            // 
+            this.txtDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetails.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetails.Location = new System.Drawing.Point(229, 47);
+            this.txtDetails.Name = "txtDetails";
+            this.txtDetails.Size = new System.Drawing.Size(655, 34);
+            this.txtDetails.TabIndex = 8;
+            // 
+            // lblDepartment
+            // 
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartment.Location = new System.Drawing.Point(17, 341);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(306, 26);
+            this.lblDepartment.TabIndex = 7;
+            this.lblDepartment.Text = "Departamento responsable:\r\n";
+            // 
+            // lblDeliveryDate
+            // 
+            this.lblDeliveryDate.AutoSize = true;
+            this.lblDeliveryDate.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeliveryDate.Location = new System.Drawing.Point(17, 280);
+            this.lblDeliveryDate.Name = "lblDeliveryDate";
+            this.lblDeliveryDate.Size = new System.Drawing.Size(212, 26);
+            this.lblDeliveryDate.TabIndex = 5;
+            this.lblDeliveryDate.Text = "Fecha de entrega:\r\n";
+            // 
+            // lblOrderDate
+            // 
+            this.lblOrderDate.AutoSize = true;
+            this.lblOrderDate.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderDate.Location = new System.Drawing.Point(17, 215);
+            this.lblOrderDate.Name = "lblOrderDate";
+            this.lblOrderDate.Size = new System.Drawing.Size(191, 26);
+            this.lblOrderDate.TabIndex = 4;
+            this.lblOrderDate.Text = "Fecha de orden:";
+            // 
+            // lblTotalCost
+            // 
+            this.lblTotalCost.AutoSize = true;
+            this.lblTotalCost.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCost.Location = new System.Drawing.Point(17, 159);
+            this.lblTotalCost.Name = "lblTotalCost";
+            this.lblTotalCost.Size = new System.Drawing.Size(127, 26);
+            this.lblTotalCost.TabIndex = 3;
+            this.lblTotalCost.Text = "Costo total:";
+            // 
+            // lblProvider
+            // 
+            this.lblProvider.AutoSize = true;
+            this.lblProvider.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProvider.Location = new System.Drawing.Point(17, 105);
+            this.lblProvider.Name = "lblProvider";
+            this.lblProvider.Size = new System.Drawing.Size(123, 26);
+            this.lblProvider.TabIndex = 2;
+            this.lblProvider.Text = "Proveedor:";
+            // 
+            // lblDetail
+            // 
+            this.lblDetail.AutoSize = true;
+            this.lblDetail.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetail.Location = new System.Drawing.Point(17, 50);
+            this.lblDetail.Name = "lblDetail";
+            this.lblDetail.Size = new System.Drawing.Size(206, 26);
+            this.lblDetail.TabIndex = 1;
+            this.lblDetail.Text = "Detalles de orden:\r\n";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Typo Grotesk", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(277, 46);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(426, 53);
+            this.lblTitle.TabIndex = 8;
+            this.lblTitle.Text = "Registro de Orden";
+            // 
+            // Order
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
+            this.ClientSize = new System.Drawing.Size(952, 606);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlStyle1);
+            this.Controls.Add(this.grpData);
+            this.Controls.Add(this.lblTitle);
+            this.Name = "Order";
+            this.Text = "Order";
+            this.grpData.ResumeLayout(false);
+            this.grpData.PerformLayout();
+            this.grpDepartment.ResumeLayout(false);
+            this.grpDepartment.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlStyle1;
+        private System.Windows.Forms.GroupBox grpData;
+        private System.Windows.Forms.Button bttNew;
+        private System.Windows.Forms.Button bttCancel;
+        private System.Windows.Forms.GroupBox grpDepartment;
+        private System.Windows.Forms.RadioButton rdbDepartment;
+        private System.Windows.Forms.Button bttUpdate;
+        private System.Windows.Forms.Button bttDelete;
+        private System.Windows.Forms.DateTimePicker dttDeliveryDate;
+        private System.Windows.Forms.Button bttSave;
+        private System.Windows.Forms.DateTimePicker dttOrdeDate;
+        private System.Windows.Forms.TextBox txtTotalCost;
+        private System.Windows.Forms.TextBox txtProvider;
+        private System.Windows.Forms.TextBox txtDetails;
+        private System.Windows.Forms.Label lblDepartment;
+        private System.Windows.Forms.Label lblDeliveryDate;
+        private System.Windows.Forms.Label lblOrderDate;
+        private System.Windows.Forms.Label lblTotalCost;
+        private System.Windows.Forms.Label lblProvider;
+        private System.Windows.Forms.Label lblDetail;
+        private System.Windows.Forms.Label lblTitle;
+    }
+}
