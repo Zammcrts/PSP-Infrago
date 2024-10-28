@@ -48,12 +48,20 @@
   <ItemGroup>
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\Machinery.cs" />
+    <Compile Include="Entities\MachineryAssignment.cs" />
+    <Compile Include="Entities\Maintenance.cs" />
+    <Compile Include="Entities\MaintenanceDetails.cs" />
     <Compile Include="Entities\Material.cs" />
     <Compile Include="Entities\MaterialAssignment.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\OrderDetail.cs" />
     <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\ProjectDetails.cs" />
     <Compile Include="Entities\Provider.cs" />
+    <Compile Include="Entities\Service.cs" />
+    <Compile Include="Entities\Tool.cs" />
+    <Compile Include="Entities\ToolAssignment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
