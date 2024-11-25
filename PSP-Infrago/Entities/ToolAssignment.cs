@@ -2,7 +2,7 @@
 {
     public class ToolAssignment
     {
-        public int AssignmentId { get; set; }
+        public int Id { get; set; }
         public string Date { get; set; }
         public string Tool { get; set; }
         public string Project { get; set; }

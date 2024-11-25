@@ -121,6 +121,11 @@
     <Compile Include="MaterialAssignment.Designer.cs">
       <DependentUpon>MaterialAssignment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411251418290_initial.cs" />
+    <Compile Include="Migrations\202411251418290_initial.Designer.cs">
+      <DependentUpon>202411251418290_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialAssignment.resx">
       <DependentUpon>MaterialAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411251418290_initial.resx">
+      <DependentUpon>202411251418290_initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>

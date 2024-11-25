@@ -2,7 +2,7 @@
 {
     public class Maintenance
     {
-        public int MaintenanceId { get; set; }
+        public int Id { get; set; }
         public int EquipmentId { get; set; }
         public int MaintenanceDate { get; set; }
         public string MaintenanceType { get; set; }

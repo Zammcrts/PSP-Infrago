@@ -2,6 +2,7 @@
 {
     public class MaintenanceDetails
     {
+        public int Id { get; set; }
         public string MaintenanceDate { get; set; }
         public string Descrption { get; set; }
         public float Cost { get; set; }
