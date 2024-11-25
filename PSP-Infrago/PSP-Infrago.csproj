@@ -229,6 +229,14 @@
       <DependentUpon>ToolAssignment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PSP_Infrago.Entities.Client.datasource" />
+    <None Include="Properties\DataSources\PSP_Infrago.Entities.Department.datasource" />
+    <None Include="Properties\DataSources\PSP_Infrago.Entities.Material.datasource" />
+    <None Include="Properties\DataSources\PSP_Infrago.Entities.MaterialAssignment.datasource" />
+    <None Include="Properties\DataSources\PSP_Infrago.Entities.Order.datasource" />
+    <None Include="Properties\DataSources\PSP_Infrago.Entities.OrderDetail.datasource" />
+    <None Include="Properties\DataSources\PSP_Infrago.Entities.Project.datasource" />
+    <None Include="Properties\DataSources\PSP_Infrago.Entities.Provider.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
