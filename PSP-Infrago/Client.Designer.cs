@@ -59,7 +59,6 @@
             this.pnlStyle2 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.dgrClient = new System.Windows.Forms.DataGridView();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +70,7 @@
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
@@ -418,10 +418,6 @@
             this.dgrClient.Size = new System.Drawing.Size(732, 584);
             this.dgrClient.TabIndex = 13;
             // 
-            // clientBindingSource
-            // 
-            this.clientBindingSource.DataSource = typeof(PSP_Infrago.Entities.Client);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -509,6 +505,10 @@
             this.projectDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.projectDataGridViewTextBoxColumn.Name = "projectDataGridViewTextBoxColumn";
             this.projectDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataSource = typeof(PSP_Infrago.Entities.Client);
             // 
             // frmClient
             // 

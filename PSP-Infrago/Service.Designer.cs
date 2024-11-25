@@ -1,6 +1,6 @@
 ﻿namespace PSP_Infrago
 {
-    partial class Service
+    partial class frmService
     {
         /// <summary>
         /// Required designer variable.
@@ -171,7 +171,7 @@
             this.lblService.Text = "Servicio";
             this.lblService.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Service
+            // frmService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +189,7 @@
             this.Controls.Add(this.txtServiceId);
             this.Controls.Add(this.lblServiceID);
             this.Controls.Add(this.lblService);
-            this.Name = "Service";
+            this.Name = "frmService";
             this.Text = "Servicio";
             this.ResumeLayout(false);
             this.PerformLayout();

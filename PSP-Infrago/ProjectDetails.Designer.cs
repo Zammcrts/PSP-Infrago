@@ -1,6 +1,6 @@
 ﻿namespace PSP_Infrago
 {
-    partial class ProjectDetails
+    partial class frmProjectDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -213,7 +213,7 @@
             this.lblProjectDetail.Text = "Detalles de Proyecto";
             this.lblProjectDetail.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // ProjectDetails
+            // frmProjectDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -235,7 +235,7 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblProjectDetail);
-            this.Name = "ProjectDetails";
+            this.Name = "frmProjectDetails";
             this.Text = "Detalles del Projecto";
             ((System.ComponentModel.ISupportInitialize)(this.pctDetails)).EndInit();
             this.ResumeLayout(false);

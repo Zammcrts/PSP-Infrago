@@ -1,6 +1,6 @@
 ﻿namespace PSP_Infrago
 {
-    partial class ToolAssignment
+    partial class frmToolAssignment
     {
         /// <summary>
         /// Required designer variable.
@@ -193,7 +193,7 @@
             this.lblToolAssignment.Text = "Asignación de Herramienta";
             this.lblToolAssignment.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // ToolAssignment
+            // frmToolAssignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,7 +213,7 @@
             this.Controls.Add(this.txtAssignationID);
             this.Controls.Add(this.lblAssignationID);
             this.Controls.Add(this.lblToolAssignment);
-            this.Name = "ToolAssignment";
+            this.Name = "frmToolAssignment";
             this.Text = "Asignación de Herramienta";
             ((System.ComponentModel.ISupportInitialize)(this.pctAssignation)).EndInit();
             this.ResumeLayout(false);

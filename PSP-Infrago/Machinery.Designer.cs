@@ -1,6 +1,6 @@
 ﻿namespace PSP_Infrago
 {
-    partial class Machinery
+    partial class frmMachinery
     {
         /// <summary>
         /// Required designer variable.
@@ -233,7 +233,7 @@
             this.lblMachinery.Text = "Maquinaria";
             this.lblMachinery.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Machinery
+            // frmMachinery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,7 +257,7 @@
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblMachinery);
-            this.Name = "Machinery";
+            this.Name = "frmMachinery";
             this.Text = "Maquinaria";
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).EndInit();
             this.ResumeLayout(false);

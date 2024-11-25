@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PSP_Infrago
 {
-    public partial class Machinery : Form
+    public partial class frmMachinery : Form
     {
-        public Machinery()
+        public frmMachinery()
         {
             InitializeComponent();
         }

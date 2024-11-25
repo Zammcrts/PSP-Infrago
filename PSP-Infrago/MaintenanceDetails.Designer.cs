@@ -1,6 +1,6 @@
 ﻿namespace PSP_Infrago
 {
-    partial class MaintenanceDetails
+    partial class frmMaintenanceDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -213,7 +213,7 @@
             this.lblManitenanceDetails.Text = "Detalles de Mantenimiento";
             this.lblManitenanceDetails.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // MaintenanceDetails
+            // frmMaintenanceDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -235,7 +235,7 @@
             this.Controls.Add(this.lblMaintenanceDescrption);
             this.Controls.Add(this.lblMaintenanceDate);
             this.Controls.Add(this.lblManitenanceDetails);
-            this.Name = "MaintenanceDetails";
+            this.Name = "frmMaintenanceDetails";
             this.Text = "Detalles de Mantenimiento";
             ((System.ComponentModel.ISupportInitialize)(this.pctMaintenance)).EndInit();
             this.ResumeLayout(false);

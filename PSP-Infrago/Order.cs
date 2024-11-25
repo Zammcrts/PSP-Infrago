@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PSP_Infrago
 {
-    public partial class Order : Form
+    public partial class frmOrder : Form
     {
-        public Order()
+        public frmOrder()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace PSP_Infrago
 {
-    partial class MachineryAssignment
+    partial class frmMachineryAssignment
     {
         /// <summary>
         /// Required designer variable.
@@ -173,7 +173,7 @@
             this.lblMachineryAssignment.Text = "Asignación de Maquinaria";
             this.lblMachineryAssignment.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // MachineryAssignment
+            // frmMachineryAssignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,7 +191,7 @@
             this.Controls.Add(this.txtProject);
             this.Controls.Add(this.lblProject);
             this.Controls.Add(this.lblMachineryAssignment);
-            this.Name = "MachineryAssignment";
+            this.Name = "frmMachineryAssignment";
             this.Text = "Asignación de Maquinaria";
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).EndInit();
             this.ResumeLayout(false);

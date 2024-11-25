@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PSP_Infrago
 {
-    public partial class Material : Form
+    public partial class frmMaterial : Form
     {
-        public Material()
+        public frmMaterial()
         {
             InitializeComponent();
         }
