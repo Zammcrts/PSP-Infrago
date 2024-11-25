@@ -42,11 +42,6 @@
             this.txtProject = new System.Windows.Forms.TextBox();
             this.lblZipcode = new System.Windows.Forms.Label();
             this.lblTownship = new System.Windows.Forms.Label();
-            this.bttNew = new System.Windows.Forms.Button();
-            this.bttCancel = new System.Windows.Forms.Button();
-            this.bttUpdate = new System.Windows.Forms.Button();
-            this.bttDelete = new System.Windows.Forms.Button();
-            this.bttSave = new System.Windows.Forms.Button();
             this.txtClientName = new System.Windows.Forms.TextBox();
             this.lblState = new System.Windows.Forms.Label();
             this.lblExteriorNumber = new System.Windows.Forms.Label();
@@ -59,6 +54,11 @@
             this.pnlStyle2 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.dgrClient = new System.Windows.Forms.DataGridView();
+            this.bttNew = new System.Windows.Forms.Button();
+            this.bttCancel = new System.Windows.Forms.Button();
+            this.bttUpdate = new System.Windows.Forms.Button();
+            this.bttDelete = new System.Windows.Forms.Button();
+            this.bttSave = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,11 +91,6 @@
             this.grpData.Controls.Add(this.txtProject);
             this.grpData.Controls.Add(this.lblZipcode);
             this.grpData.Controls.Add(this.lblTownship);
-            this.grpData.Controls.Add(this.bttNew);
-            this.grpData.Controls.Add(this.bttCancel);
-            this.grpData.Controls.Add(this.bttUpdate);
-            this.grpData.Controls.Add(this.bttDelete);
-            this.grpData.Controls.Add(this.bttSave);
             this.grpData.Controls.Add(this.txtClientName);
             this.grpData.Controls.Add(this.lblState);
             this.grpData.Controls.Add(this.lblExteriorNumber);
@@ -107,7 +102,7 @@
             this.grpData.Font = new System.Drawing.Font("Typo Grotesk", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpData.Location = new System.Drawing.Point(18, 111);
             this.grpData.Name = "grpData";
-            this.grpData.Size = new System.Drawing.Size(914, 517);
+            this.grpData.Size = new System.Drawing.Size(914, 431);
             this.grpData.TabIndex = 12;
             this.grpData.TabStop = false;
             this.grpData.Text = "Datos del cliente";
@@ -125,6 +120,7 @@
             // txtCity
             // 
             this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "City", true));
             this.txtCity.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCity.Location = new System.Drawing.Point(130, 334);
             this.txtCity.Name = "txtCity";
@@ -134,6 +130,7 @@
             // txtZipcode
             // 
             this.txtZipcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZipcode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "ZipCode", true));
             this.txtZipcode.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtZipcode.Location = new System.Drawing.Point(733, 333);
             this.txtZipcode.Name = "txtZipcode";
@@ -143,6 +140,7 @@
             // txtTownship
             // 
             this.txtTownship.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTownship.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Township", true));
             this.txtTownship.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTownship.Location = new System.Drawing.Point(591, 276);
             this.txtTownship.Name = "txtTownship";
@@ -152,6 +150,7 @@
             // txtState
             // 
             this.txtState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "State", true));
             this.txtState.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtState.Location = new System.Drawing.Point(130, 272);
             this.txtState.Name = "txtState";
@@ -161,15 +160,17 @@
             // txtExteriorNumber
             // 
             this.txtExteriorNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExteriorNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "ExteriorNumber", true));
             this.txtExteriorNumber.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExteriorNumber.Location = new System.Drawing.Point(660, 216);
+            this.txtExteriorNumber.Location = new System.Drawing.Point(663, 216);
             this.txtExteriorNumber.Name = "txtExteriorNumber";
-            this.txtExteriorNumber.Size = new System.Drawing.Size(205, 34);
+            this.txtExteriorNumber.Size = new System.Drawing.Size(202, 34);
             this.txtExteriorNumber.TabIndex = 27;
             // 
             // txtStreet
             // 
             this.txtStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStreet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Street", true));
             this.txtStreet.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStreet.Location = new System.Drawing.Point(130, 216);
             this.txtStreet.Name = "txtStreet";
@@ -179,6 +180,7 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Email", true));
             this.txtEmail.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(551, 158);
             this.txtEmail.Name = "txtEmail";
@@ -188,6 +190,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Phone", true));
             this.txtPhoneNumber.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(132, 160);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
@@ -197,6 +200,7 @@
             // txtProject
             // 
             this.txtProject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProject.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Project", true));
             this.txtProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProject.Location = new System.Drawing.Point(132, 104);
             this.txtProject.Name = "txtProject";
@@ -223,74 +227,10 @@
             this.lblTownship.TabIndex = 21;
             this.lblTownship.Text = "Municipio:";
             // 
-            // bttNew
-            // 
-            this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttNew.Location = new System.Drawing.Point(111, 463);
-            this.bttNew.Name = "bttNew";
-            this.bttNew.Size = new System.Drawing.Size(122, 33);
-            this.bttNew.TabIndex = 20;
-            this.bttNew.Text = "Nuevo";
-            this.bttNew.UseVisualStyleBackColor = false;
-            this.bttNew.Click += new System.EventHandler(this.bttNew_Click);
-            // 
-            // bttCancel
-            // 
-            this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttCancel.Location = new System.Drawing.Point(531, 463);
-            this.bttCancel.Name = "bttCancel";
-            this.bttCancel.Size = new System.Drawing.Size(122, 33);
-            this.bttCancel.TabIndex = 19;
-            this.bttCancel.Text = "Cancelar";
-            this.bttCancel.UseVisualStyleBackColor = false;
-            this.bttCancel.Click += new System.EventHandler(this.bttCancel_Click);
-            // 
-            // bttUpdate
-            // 
-            this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttUpdate.Location = new System.Drawing.Point(393, 463);
-            this.bttUpdate.Name = "bttUpdate";
-            this.bttUpdate.Size = new System.Drawing.Size(122, 33);
-            this.bttUpdate.TabIndex = 18;
-            this.bttUpdate.Text = "Actualizar";
-            this.bttUpdate.UseVisualStyleBackColor = false;
-            this.bttUpdate.Click += new System.EventHandler(this.bttUpdate_Click);
-            // 
-            // bttDelete
-            // 
-            this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttDelete.Location = new System.Drawing.Point(673, 463);
-            this.bttDelete.Name = "bttDelete";
-            this.bttDelete.Size = new System.Drawing.Size(122, 33);
-            this.bttDelete.TabIndex = 17;
-            this.bttDelete.Text = "Eliminar";
-            this.bttDelete.UseVisualStyleBackColor = false;
-            this.bttDelete.Click += new System.EventHandler(this.bttDelete_Click);
-            // 
-            // bttSave
-            // 
-            this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttSave.Location = new System.Drawing.Point(253, 463);
-            this.bttSave.Name = "bttSave";
-            this.bttSave.Size = new System.Drawing.Size(122, 33);
-            this.bttSave.TabIndex = 16;
-            this.bttSave.Text = "Guardar";
-            this.bttSave.UseVisualStyleBackColor = false;
-            this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
-            // 
             // txtClientName
             // 
             this.txtClientName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtClientName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "Name", true));
             this.txtClientName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClientName.Location = new System.Drawing.Point(243, 52);
             this.txtClientName.Name = "txtClientName";
@@ -417,6 +357,72 @@
             this.dgrClient.RowTemplate.Height = 24;
             this.dgrClient.Size = new System.Drawing.Size(732, 584);
             this.dgrClient.TabIndex = 13;
+            this.dgrClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrClient_CellClick);
+            // 
+            // bttNew
+            // 
+            this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttNew.Location = new System.Drawing.Point(146, 568);
+            this.bttNew.Name = "bttNew";
+            this.bttNew.Size = new System.Drawing.Size(122, 33);
+            this.bttNew.TabIndex = 25;
+            this.bttNew.Text = "Nuevo";
+            this.bttNew.UseVisualStyleBackColor = false;
+            this.bttNew.Click += new System.EventHandler(this.bttNew_Click_1);
+            // 
+            // bttCancel
+            // 
+            this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttCancel.Location = new System.Drawing.Point(566, 568);
+            this.bttCancel.Name = "bttCancel";
+            this.bttCancel.Size = new System.Drawing.Size(122, 33);
+            this.bttCancel.TabIndex = 24;
+            this.bttCancel.Text = "Cancelar";
+            this.bttCancel.UseVisualStyleBackColor = false;
+            this.bttCancel.Click += new System.EventHandler(this.bttCancel_Click_1);
+            // 
+            // bttUpdate
+            // 
+            this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttUpdate.Location = new System.Drawing.Point(428, 568);
+            this.bttUpdate.Name = "bttUpdate";
+            this.bttUpdate.Size = new System.Drawing.Size(122, 33);
+            this.bttUpdate.TabIndex = 23;
+            this.bttUpdate.Text = "Actualizar";
+            this.bttUpdate.UseVisualStyleBackColor = false;
+            this.bttUpdate.Click += new System.EventHandler(this.bttUpdate_Click_1);
+            // 
+            // bttDelete
+            // 
+            this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttDelete.Location = new System.Drawing.Point(708, 568);
+            this.bttDelete.Name = "bttDelete";
+            this.bttDelete.Size = new System.Drawing.Size(122, 33);
+            this.bttDelete.TabIndex = 22;
+            this.bttDelete.Text = "Eliminar";
+            this.bttDelete.UseVisualStyleBackColor = false;
+            this.bttDelete.Click += new System.EventHandler(this.bttDelete_Click_1);
+            // 
+            // bttSave
+            // 
+            this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttSave.Location = new System.Drawing.Point(288, 568);
+            this.bttSave.Name = "bttSave";
+            this.bttSave.Size = new System.Drawing.Size(122, 33);
+            this.bttSave.TabIndex = 21;
+            this.bttSave.Text = "Guardar";
+            this.bttSave.UseVisualStyleBackColor = false;
+            this.bttSave.Click += new System.EventHandler(this.bttSave_Click_1);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -516,6 +522,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1682, 673);
+            this.Controls.Add(this.bttNew);
+            this.Controls.Add(this.bttCancel);
+            this.Controls.Add(this.bttUpdate);
+            this.Controls.Add(this.bttDelete);
+            this.Controls.Add(this.bttSave);
             this.Controls.Add(this.dgrClient);
             this.Controls.Add(this.grpData);
             this.Controls.Add(this.lblTitle);
@@ -523,6 +534,8 @@
             this.Controls.Add(this.pnlStyle1);
             this.Name = "frmClient";
             this.Text = "Registro Cliente";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmClient_FormClosed);
+            this.Load += new System.EventHandler(this.frmClient_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrClient)).EndInit();
@@ -547,11 +560,6 @@
         private System.Windows.Forms.TextBox txtProject;
         private System.Windows.Forms.Label lblZipcode;
         private System.Windows.Forms.Label lblTownship;
-        private System.Windows.Forms.Button bttNew;
-        private System.Windows.Forms.Button bttCancel;
-        private System.Windows.Forms.Button bttUpdate;
-        private System.Windows.Forms.Button bttDelete;
-        private System.Windows.Forms.Button bttSave;
         private System.Windows.Forms.TextBox txtClientName;
         private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.Label lblExteriorNumber;
@@ -576,5 +584,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn zipCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn projectDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource clientBindingSource;
+        private System.Windows.Forms.Button bttNew;
+        private System.Windows.Forms.Button bttCancel;
+        private System.Windows.Forms.Button bttUpdate;
+        private System.Windows.Forms.Button bttDelete;
+        private System.Windows.Forms.Button bttSave;
     }
 }

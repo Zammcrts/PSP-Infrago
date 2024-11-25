@@ -18,12 +18,10 @@ namespace PSP_Infrago.Entities
 
         [Required]
         [StringLength(15)]
-        [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
 
         [Required]
         [StringLength(100)]
-        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required]
@@ -47,7 +45,6 @@ namespace PSP_Infrago.Entities
 
         [Required]
         [StringLength(10)]
-        [DataType(DataType.PostalCode)]
         public string ZipCode { get; set; }
 
         [Required]

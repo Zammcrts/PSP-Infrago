@@ -16,5 +16,10 @@ namespace PSP_Infrago
         {
             InitializeComponent();
         }
+
+        private void frmOrderDetail_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
     }
 }

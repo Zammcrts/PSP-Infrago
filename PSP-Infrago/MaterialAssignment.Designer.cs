@@ -286,6 +286,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "frmMaterialAssignment";
             this.Text = "MaterialAssignment";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMaterialAssignment_FormClosed);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

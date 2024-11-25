@@ -43,24 +43,19 @@
             this.pnlStyle2 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrDepartment = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grpData
             // 
             this.grpData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.grpData.Controls.Add(this.bttNew);
-            this.grpData.Controls.Add(this.bttCancel);
-            this.grpData.Controls.Add(this.bttUpdate);
-            this.grpData.Controls.Add(this.bttDelete);
-            this.grpData.Controls.Add(this.bttSave);
             this.grpData.Controls.Add(this.txtOrder);
             this.grpData.Controls.Add(this.lblOrder);
             this.grpData.Controls.Add(this.txtDepartmentName);
@@ -69,7 +64,7 @@
             this.grpData.Font = new System.Drawing.Font("Typo Grotesk", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpData.Location = new System.Drawing.Point(19, 116);
             this.grpData.Name = "grpData";
-            this.grpData.Size = new System.Drawing.Size(914, 234);
+            this.grpData.Size = new System.Drawing.Size(914, 177);
             this.grpData.TabIndex = 20;
             this.grpData.TabStop = false;
             this.grpData.Text = "Departamento responsable";
@@ -79,64 +74,70 @@
             this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttNew.Location = new System.Drawing.Point(110, 195);
+            this.bttNew.Location = new System.Drawing.Point(128, 308);
             this.bttNew.Name = "bttNew";
             this.bttNew.Size = new System.Drawing.Size(122, 33);
             this.bttNew.TabIndex = 32;
             this.bttNew.Text = "Nuevo";
             this.bttNew.UseVisualStyleBackColor = false;
+            this.bttNew.Click += new System.EventHandler(this.bttNew_Click);
             // 
             // bttCancel
             // 
             this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttCancel.Location = new System.Drawing.Point(530, 195);
+            this.bttCancel.Location = new System.Drawing.Point(548, 308);
             this.bttCancel.Name = "bttCancel";
             this.bttCancel.Size = new System.Drawing.Size(122, 33);
             this.bttCancel.TabIndex = 31;
             this.bttCancel.Text = "Cancelar";
             this.bttCancel.UseVisualStyleBackColor = false;
+            this.bttCancel.Click += new System.EventHandler(this.bttCancel_Click);
             // 
             // bttUpdate
             // 
             this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttUpdate.Location = new System.Drawing.Point(392, 195);
+            this.bttUpdate.Location = new System.Drawing.Point(410, 308);
             this.bttUpdate.Name = "bttUpdate";
             this.bttUpdate.Size = new System.Drawing.Size(122, 33);
             this.bttUpdate.TabIndex = 30;
             this.bttUpdate.Text = "Actualizar";
             this.bttUpdate.UseVisualStyleBackColor = false;
+            this.bttUpdate.Click += new System.EventHandler(this.bttUpdate_Click);
             // 
             // bttDelete
             // 
             this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttDelete.Location = new System.Drawing.Point(672, 195);
+            this.bttDelete.Location = new System.Drawing.Point(690, 308);
             this.bttDelete.Name = "bttDelete";
             this.bttDelete.Size = new System.Drawing.Size(122, 33);
             this.bttDelete.TabIndex = 29;
             this.bttDelete.Text = "Eliminar";
             this.bttDelete.UseVisualStyleBackColor = false;
+            this.bttDelete.Click += new System.EventHandler(this.bttDelete_Click);
             // 
             // bttSave
             // 
             this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttSave.Location = new System.Drawing.Point(252, 195);
+            this.bttSave.Location = new System.Drawing.Point(270, 308);
             this.bttSave.Name = "bttSave";
             this.bttSave.Size = new System.Drawing.Size(122, 33);
             this.bttSave.TabIndex = 28;
             this.bttSave.Text = "Guardar";
             this.bttSave.UseVisualStyleBackColor = false;
+            this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
             // 
             // txtOrder
             // 
             this.txtOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOrder.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.departmentBindingSource, "Order", true));
             this.txtOrder.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrder.Location = new System.Drawing.Point(233, 122);
             this.txtOrder.Name = "txtOrder";
@@ -156,6 +157,7 @@
             // txtDepartmentName
             // 
             this.txtDepartmentName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDepartmentName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.departmentBindingSource, "DepartmentName", true));
             this.txtDepartmentName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDepartmentName.Location = new System.Drawing.Point(209, 60);
             this.txtDepartmentName.Name = "txtDepartmentName";
@@ -207,21 +209,22 @@
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "Registro Departamento";
             // 
-            // dataGridView1
+            // dgrDepartment
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrDepartment.AutoGenerateColumns = false;
+            this.dgrDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrDepartment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.departmentNameDataGridViewTextBoxColumn,
             this.orderDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.departmentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(939, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(440, 305);
-            this.dataGridView1.TabIndex = 21;
+            this.dgrDepartment.DataSource = this.departmentBindingSource;
+            this.dgrDepartment.Location = new System.Drawing.Point(939, 45);
+            this.dgrDepartment.Name = "dgrDepartment";
+            this.dgrDepartment.RowHeadersWidth = 51;
+            this.dgrDepartment.RowTemplate.Height = 24;
+            this.dgrDepartment.Size = new System.Drawing.Size(440, 305);
+            this.dgrDepartment.TabIndex = 21;
+            this.dgrDepartment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrDepartment_CellClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -257,16 +260,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1386, 393);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.bttNew);
+            this.Controls.Add(this.dgrDepartment);
+            this.Controls.Add(this.bttDelete);
             this.Controls.Add(this.grpData);
+            this.Controls.Add(this.bttCancel);
             this.Controls.Add(this.pnlStyle2);
+            this.Controls.Add(this.bttSave);
             this.Controls.Add(this.pnlStyle1);
+            this.Controls.Add(this.bttUpdate);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmDepartment";
             this.Text = "Department";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDepartment_FormClosed);
+            this.Load += new System.EventHandler(this.frmDepartment_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -284,7 +294,7 @@
         private System.Windows.Forms.Panel pnlStyle2;
         private System.Windows.Forms.Panel pnlStyle1;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrDepartment;
         private System.Windows.Forms.Button bttNew;
         private System.Windows.Forms.Button bttCancel;
         private System.Windows.Forms.Button bttUpdate;

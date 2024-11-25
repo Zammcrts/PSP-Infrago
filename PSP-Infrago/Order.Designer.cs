@@ -401,6 +401,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "frmOrder";
             this.Text = "Order";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrder_FormClosed);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
             this.grpDepartment.ResumeLayout(false);

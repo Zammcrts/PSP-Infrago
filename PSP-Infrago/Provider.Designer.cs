@@ -517,6 +517,7 @@
             this.Controls.Add(this.pnlStyle1);
             this.Name = "frmProvider";
             this.Text = "Provider";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmProvider_FormClosed);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

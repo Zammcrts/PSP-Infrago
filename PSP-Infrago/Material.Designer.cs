@@ -45,25 +45,20 @@
             this.pnlStyle2 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrMaterial = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pricePerUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grpData
             // 
             this.grpData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.grpData.Controls.Add(this.bttNew);
-            this.grpData.Controls.Add(this.bttCancel);
-            this.grpData.Controls.Add(this.bttUpdate);
-            this.grpData.Controls.Add(this.bttDelete);
-            this.grpData.Controls.Add(this.bttSave);
             this.grpData.Controls.Add(this.txtPricePerUnit);
             this.grpData.Controls.Add(this.lblPricePerUnit);
             this.grpData.Controls.Add(this.txtQuantityInStock);
@@ -74,7 +69,7 @@
             this.grpData.Font = new System.Drawing.Font("Typo Grotesk", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpData.Location = new System.Drawing.Point(19, 116);
             this.grpData.Name = "grpData";
-            this.grpData.Size = new System.Drawing.Size(914, 331);
+            this.grpData.Size = new System.Drawing.Size(914, 241);
             this.grpData.TabIndex = 16;
             this.grpData.TabStop = false;
             this.grpData.Text = "Datos de la asignación del material";
@@ -84,64 +79,70 @@
             this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttNew.Location = new System.Drawing.Point(97, 278);
+            this.bttNew.Location = new System.Drawing.Point(111, 391);
             this.bttNew.Name = "bttNew";
             this.bttNew.Size = new System.Drawing.Size(122, 33);
             this.bttNew.TabIndex = 34;
             this.bttNew.Text = "Nuevo";
             this.bttNew.UseVisualStyleBackColor = false;
+            this.bttNew.Click += new System.EventHandler(this.bttNew_Click);
             // 
             // bttCancel
             // 
             this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttCancel.Location = new System.Drawing.Point(517, 278);
+            this.bttCancel.Location = new System.Drawing.Point(531, 391);
             this.bttCancel.Name = "bttCancel";
             this.bttCancel.Size = new System.Drawing.Size(122, 33);
             this.bttCancel.TabIndex = 33;
             this.bttCancel.Text = "Cancelar";
             this.bttCancel.UseVisualStyleBackColor = false;
+            this.bttCancel.Click += new System.EventHandler(this.bttCancel_Click);
             // 
             // bttUpdate
             // 
             this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttUpdate.Location = new System.Drawing.Point(379, 278);
+            this.bttUpdate.Location = new System.Drawing.Point(393, 391);
             this.bttUpdate.Name = "bttUpdate";
             this.bttUpdate.Size = new System.Drawing.Size(122, 33);
             this.bttUpdate.TabIndex = 32;
             this.bttUpdate.Text = "Actualizar";
             this.bttUpdate.UseVisualStyleBackColor = false;
+            this.bttUpdate.Click += new System.EventHandler(this.bttUpdate_Click);
             // 
             // bttDelete
             // 
             this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttDelete.Location = new System.Drawing.Point(659, 278);
+            this.bttDelete.Location = new System.Drawing.Point(673, 391);
             this.bttDelete.Name = "bttDelete";
             this.bttDelete.Size = new System.Drawing.Size(122, 33);
             this.bttDelete.TabIndex = 31;
             this.bttDelete.Text = "Eliminar";
             this.bttDelete.UseVisualStyleBackColor = false;
+            this.bttDelete.Click += new System.EventHandler(this.bttDelete_Click);
             // 
             // bttSave
             // 
             this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttSave.Location = new System.Drawing.Point(239, 278);
+            this.bttSave.Location = new System.Drawing.Point(253, 391);
             this.bttSave.Name = "bttSave";
             this.bttSave.Size = new System.Drawing.Size(122, 33);
             this.bttSave.TabIndex = 30;
             this.bttSave.Text = "Guardar";
             this.bttSave.UseVisualStyleBackColor = false;
+            this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
             // 
             // txtPricePerUnit
             // 
             this.txtPricePerUnit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPricePerUnit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialBindingSource, "PricePerUnit", true));
             this.txtPricePerUnit.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPricePerUnit.Location = new System.Drawing.Point(232, 174);
             this.txtPricePerUnit.Name = "txtPricePerUnit";
@@ -161,6 +162,7 @@
             // txtQuantityInStock
             // 
             this.txtQuantityInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQuantityInStock.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialBindingSource, "QuantityInStock", true));
             this.txtQuantityInStock.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantityInStock.Location = new System.Drawing.Point(378, 121);
             this.txtQuantityInStock.Name = "txtQuantityInStock";
@@ -180,6 +182,7 @@
             // txtMaterialName
             // 
             this.txtMaterialName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaterialName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialBindingSource, "MaterialName", true));
             this.txtMaterialName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaterialName.Location = new System.Drawing.Point(127, 60);
             this.txtMaterialName.Name = "txtMaterialName";
@@ -231,22 +234,23 @@
             this.lblTitle.TabIndex = 13;
             this.lblTitle.Text = "Registro de Material";
             // 
-            // dataGridView1
+            // dgrMaterial
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrMaterial.AutoGenerateColumns = false;
+            this.dgrMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrMaterial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.materialNameDataGridViewTextBoxColumn,
             this.quantityInStockDataGridViewTextBoxColumn,
             this.pricePerUnitDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.materialBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(939, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(555, 405);
-            this.dataGridView1.TabIndex = 17;
+            this.dgrMaterial.DataSource = this.materialBindingSource;
+            this.dgrMaterial.Location = new System.Drawing.Point(939, 45);
+            this.dgrMaterial.Name = "dgrMaterial";
+            this.dgrMaterial.RowHeadersWidth = 51;
+            this.dgrMaterial.RowTemplate.Height = 24;
+            this.dgrMaterial.Size = new System.Drawing.Size(555, 405);
+            this.dgrMaterial.TabIndex = 17;
+            this.dgrMaterial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrMaterial_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -290,16 +294,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1503, 493);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.bttNew);
+            this.Controls.Add(this.dgrMaterial);
+            this.Controls.Add(this.bttDelete);
+            this.Controls.Add(this.bttCancel);
             this.Controls.Add(this.grpData);
+            this.Controls.Add(this.bttSave);
             this.Controls.Add(this.pnlStyle2);
+            this.Controls.Add(this.bttUpdate);
             this.Controls.Add(this.pnlStyle1);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmMaterial";
             this.Text = "Material";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMaterial_FormClosed);
+            this.Load += new System.EventHandler(this.frmMaterial_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -319,7 +330,7 @@
         private System.Windows.Forms.Panel pnlStyle2;
         private System.Windows.Forms.Panel pnlStyle1;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrMaterial;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn materialNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityInStockDataGridViewTextBoxColumn;

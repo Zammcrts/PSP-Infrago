@@ -12,26 +12,18 @@ namespace PSP_Infrago.Entities
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
         public DateTime OrderDate { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
         public DateTime DeliveryDate { get; set; }
 
-        [Required]
-        [Range(0, float.MaxValue)]
         public float TotalCost { get; set; }
 
         [StringLength(500)]
         public string Details { get; set; }
 
-        [Required]
         [StringLength(100)]
         public string Provider { get; set; }
 
-        [Required]
         [StringLength(100)]
         public string Department { get; set; }
 

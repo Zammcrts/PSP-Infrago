@@ -330,6 +330,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "frmOrderDetail";
             this.Text = "OrderDetail";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrderDetail_FormClosed);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

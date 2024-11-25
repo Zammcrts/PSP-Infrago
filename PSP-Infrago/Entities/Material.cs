@@ -12,15 +12,12 @@ namespace PSP_Infrago.Entities
         [Key]
         public int Id { get; set; }
 
-        [Required]
         [StringLength(100)]
         public string MaterialName { get; set; }
 
-        [Required]
         [StringLength(100)]
         public string QuantityInStock { get; set; }
 
-        [Required]
         [Range(0, float.MaxValue)]
         public float PricePerUnit { get; set; }
 

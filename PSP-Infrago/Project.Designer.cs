@@ -477,6 +477,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "frmProject";
             this.Text = "Project";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmProject_FormClosed);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
             this.grpStatus.ResumeLayout(false);
