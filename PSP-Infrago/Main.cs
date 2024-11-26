@@ -66,5 +66,61 @@ namespace PSP_Infrago
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void herramientasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTool frm = new frmTool();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void asignaciónDeHerramientasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmToolAssignment frm = new frmToolAssignment();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMaintenance frm = new frmMaintenance();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void detallesDeMantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMaintenanceDetails frm = new frmMaintenanceDetails();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void maquinarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMachinery frm = new frmMachinery();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void asignaciónDeMaquinariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMachineryAssignment frm = new frmMachineryAssignment();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void detallesDelProyectoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProjectDetails frm = new frmProjectDetails();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmService frm = new frmService();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
