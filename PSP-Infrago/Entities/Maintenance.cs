@@ -11,3 +11,4 @@
         public string Details { get; set; }
         public string Photo { get; set; }
     }
+}
