@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblMaintenancePicture = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -47,7 +48,20 @@
             this.txtMaintenanceId = new System.Windows.Forms.TextBox();
             this.lblMaintenanceId = new System.Windows.Forms.Label();
             this.lblManitenance = new System.Windows.Forms.Label();
+            this.grdMaintenance = new System.Windows.Forms.DataGridView();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.maintenanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maintenanceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maintenanceTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pctMaintenance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMaintenance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenanceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMaintenancePicture
@@ -64,45 +78,49 @@
             // 
             this.btnNew.BackColor = System.Drawing.Color.LightPink;
             this.btnNew.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(706, 658);
+            this.btnNew.Location = new System.Drawing.Point(706, 684);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(180, 38);
             this.btnNew.TabIndex = 57;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.LightPink;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(501, 658);
+            this.btnDelete.Location = new System.Drawing.Point(501, 684);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(180, 38);
             this.btnDelete.TabIndex = 56;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.LightPink;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(297, 658);
+            this.btnUpdate.Location = new System.Drawing.Point(297, 684);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(180, 38);
             this.btnUpdate.TabIndex = 55;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.LightPink;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(98, 658);
+            this.btnSave.Location = new System.Drawing.Point(98, 684);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(180, 38);
             this.btnSave.TabIndex = 54;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pctMaintenance
             // 
@@ -115,6 +133,7 @@
             // 
             // txtDetails
             // 
+            this.txtDetails.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.maintenanceBindingSource, "Details", true));
             this.txtDetails.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDetails.Location = new System.Drawing.Point(308, 547);
             this.txtDetails.Name = "txtDetails";
@@ -133,6 +152,7 @@
             // 
             // txtCost
             // 
+            this.txtCost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.maintenanceBindingSource, "Cost", true));
             this.txtCost.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCost.Location = new System.Drawing.Point(308, 494);
             this.txtCost.Name = "txtCost";
@@ -151,6 +171,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.maintenanceBindingSource, "Description", true));
             this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(308, 438);
             this.txtDescription.Name = "txtDescription";
@@ -169,6 +190,7 @@
             // 
             // txtMaintenanceType
             // 
+            this.txtMaintenanceType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.maintenanceBindingSource, "MaintenanceType", true));
             this.txtMaintenanceType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaintenanceType.Location = new System.Drawing.Point(308, 381);
             this.txtMaintenanceType.Name = "txtMaintenanceType";
@@ -187,6 +209,7 @@
             // 
             // txtEquipmentId
             // 
+            this.txtEquipmentId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.maintenanceBindingSource, "EquipmentId", true));
             this.txtEquipmentId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEquipmentId.Location = new System.Drawing.Point(308, 329);
             this.txtEquipmentId.Name = "txtEquipmentId";
@@ -205,6 +228,7 @@
             // 
             // txtMaintenanceId
             // 
+            this.txtMaintenanceId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.maintenanceBindingSource, "Id", true));
             this.txtMaintenanceId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaintenanceId.Location = new System.Drawing.Point(308, 278);
             this.txtMaintenanceId.Name = "txtMaintenanceId";
@@ -233,11 +257,118 @@
             this.lblManitenance.Text = "Mantenimiento";
             this.lblManitenance.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // grdMaintenance
+            // 
+            this.grdMaintenance.AutoGenerateColumns = false;
+            this.grdMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdMaintenance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.equipmentIdDataGridViewTextBoxColumn,
+            this.maintenanceDateDataGridViewTextBoxColumn,
+            this.maintenanceTypeDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.detailsDataGridViewTextBoxColumn});
+            this.grdMaintenance.DataSource = this.maintenanceBindingSource;
+            this.grdMaintenance.Location = new System.Drawing.Point(1055, 162);
+            this.grdMaintenance.Name = "grdMaintenance";
+            this.grdMaintenance.RowHeadersWidth = 51;
+            this.grdMaintenance.RowTemplate.Height = 24;
+            this.grdMaintenance.Size = new System.Drawing.Size(562, 534);
+            this.grdMaintenance.TabIndex = 59;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.LightPink;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(391, 747);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(180, 38);
+            this.btnCancel.TabIndex = 60;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackColor = System.Drawing.Color.LightPink;
+            this.btnUpload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Location = new System.Drawing.Point(759, 582);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(180, 38);
+            this.btnUpload.TabIndex = 61;
+            this.btnUpload.Text = "Cargar";
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // maintenanceBindingSource
+            // 
+            this.maintenanceBindingSource.DataSource = typeof(PSP_Infrago.Entities.Maintenance);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // equipmentIdDataGridViewTextBoxColumn
+            // 
+            this.equipmentIdDataGridViewTextBoxColumn.DataPropertyName = "EquipmentId";
+            this.equipmentIdDataGridViewTextBoxColumn.HeaderText = "EquipmentId";
+            this.equipmentIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.equipmentIdDataGridViewTextBoxColumn.Name = "equipmentIdDataGridViewTextBoxColumn";
+            this.equipmentIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // maintenanceDateDataGridViewTextBoxColumn
+            // 
+            this.maintenanceDateDataGridViewTextBoxColumn.DataPropertyName = "MaintenanceDate";
+            this.maintenanceDateDataGridViewTextBoxColumn.HeaderText = "MaintenanceDate";
+            this.maintenanceDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maintenanceDateDataGridViewTextBoxColumn.Name = "maintenanceDateDataGridViewTextBoxColumn";
+            this.maintenanceDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // maintenanceTypeDataGridViewTextBoxColumn
+            // 
+            this.maintenanceTypeDataGridViewTextBoxColumn.DataPropertyName = "MaintenanceType";
+            this.maintenanceTypeDataGridViewTextBoxColumn.HeaderText = "MaintenanceType";
+            this.maintenanceTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maintenanceTypeDataGridViewTextBoxColumn.Name = "maintenanceTypeDataGridViewTextBoxColumn";
+            this.maintenanceTypeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // detailsDataGridViewTextBoxColumn
+            // 
+            this.detailsDataGridViewTextBoxColumn.DataPropertyName = "Details";
+            this.detailsDataGridViewTextBoxColumn.HeaderText = "Details";
+            this.detailsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.detailsDataGridViewTextBoxColumn.Name = "detailsDataGridViewTextBoxColumn";
+            this.detailsDataGridViewTextBoxColumn.Width = 125;
+            // 
             // frmMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 859);
+            this.ClientSize = new System.Drawing.Size(1682, 859);
+            this.Controls.Add(this.btnUpload);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.grdMaintenance);
             this.Controls.Add(this.lblMaintenancePicture);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
@@ -259,7 +390,10 @@
             this.Controls.Add(this.lblManitenance);
             this.Name = "frmMaintenance";
             this.Text = "Mantenimiento";
+            this.Load += new System.EventHandler(this.frmMaintenance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctMaintenance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMaintenance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maintenanceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +420,16 @@
         private System.Windows.Forms.TextBox txtMaintenanceId;
         private System.Windows.Forms.Label lblMaintenanceId;
         private System.Windows.Forms.Label lblManitenance;
+        private System.Windows.Forms.DataGridView grdMaintenance;
+        private System.Windows.Forms.BindingSource maintenanceBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maintenanceDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maintenanceTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detailsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnUpload;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblMachinePicture = new System.Windows.Forms.Label();
             this.pctMachine = new System.Windows.Forms.PictureBox();
             this.dtpAssignation = new System.Windows.Forms.DateTimePicker();
@@ -41,7 +42,17 @@
             this.txtProject = new System.Windows.Forms.TextBox();
             this.lblProject = new System.Windows.Forms.Label();
             this.lblMachineryAssignment = new System.Windows.Forms.Label();
+            this.grdMachineryAssignment = new System.Windows.Forms.DataGridView();
+            this.machineryAssignmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.machineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMachineryAssignment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineryAssignmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMachinePicture
@@ -65,6 +76,7 @@
             // 
             // dtpAssignation
             // 
+            this.dtpAssignation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.machineryAssignmentBindingSource, "AssignationDate", true));
             this.dtpAssignation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpAssignation.Location = new System.Drawing.Point(306, 408);
             this.dtpAssignation.Name = "dtpAssignation";
@@ -75,48 +87,53 @@
             // 
             this.btnNew.BackColor = System.Drawing.Color.Aquamarine;
             this.btnNew.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(737, 633);
+            this.btnNew.Location = new System.Drawing.Point(737, 659);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(180, 38);
             this.btnNew.TabIndex = 66;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Aquamarine;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(532, 633);
+            this.btnDelete.Location = new System.Drawing.Point(532, 659);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(180, 38);
             this.btnDelete.TabIndex = 65;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Aquamarine;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(328, 633);
+            this.btnUpdate.Location = new System.Drawing.Point(328, 659);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(180, 38);
             this.btnUpdate.TabIndex = 64;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Aquamarine;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(129, 633);
+            this.btnSave.Location = new System.Drawing.Point(129, 659);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(180, 38);
             this.btnSave.TabIndex = 63;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtMachine
             // 
+            this.txtMachine.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.machineryAssignmentBindingSource, "Machine", true));
             this.txtMachine.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMachine.Location = new System.Drawing.Point(306, 458);
             this.txtMachine.Name = "txtMachine";
@@ -145,6 +162,7 @@
             // 
             // txtProject
             // 
+            this.txtProject.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.machineryAssignmentBindingSource, "Project", true));
             this.txtProject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProject.Location = new System.Drawing.Point(306, 355);
             this.txtProject.Name = "txtProject";
@@ -173,11 +191,91 @@
             this.lblMachineryAssignment.Text = "Asignación de Maquinaria";
             this.lblMachineryAssignment.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // grdMachineryAssignment
+            // 
+            this.grdMachineryAssignment.AutoGenerateColumns = false;
+            this.grdMachineryAssignment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdMachineryAssignment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.projectDataGridViewTextBoxColumn,
+            this.assignationDateDataGridViewTextBoxColumn,
+            this.machineDataGridViewTextBoxColumn});
+            this.grdMachineryAssignment.DataSource = this.machineryAssignmentBindingSource;
+            this.grdMachineryAssignment.Location = new System.Drawing.Point(1072, 187);
+            this.grdMachineryAssignment.Name = "grdMachineryAssignment";
+            this.grdMachineryAssignment.RowHeadersWidth = 51;
+            this.grdMachineryAssignment.RowTemplate.Height = 24;
+            this.grdMachineryAssignment.Size = new System.Drawing.Size(541, 484);
+            this.grdMachineryAssignment.TabIndex = 70;
+            // 
+            // machineryAssignmentBindingSource
+            // 
+            this.machineryAssignmentBindingSource.DataSource = typeof(PSP_Infrago.Entities.MachineryAssignment);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // projectDataGridViewTextBoxColumn
+            // 
+            this.projectDataGridViewTextBoxColumn.DataPropertyName = "Project";
+            this.projectDataGridViewTextBoxColumn.HeaderText = "Project";
+            this.projectDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.projectDataGridViewTextBoxColumn.Name = "projectDataGridViewTextBoxColumn";
+            this.projectDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // assignationDateDataGridViewTextBoxColumn
+            // 
+            this.assignationDateDataGridViewTextBoxColumn.DataPropertyName = "AssignationDate";
+            this.assignationDateDataGridViewTextBoxColumn.HeaderText = "AssignationDate";
+            this.assignationDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.assignationDateDataGridViewTextBoxColumn.Name = "assignationDateDataGridViewTextBoxColumn";
+            this.assignationDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // machineDataGridViewTextBoxColumn
+            // 
+            this.machineDataGridViewTextBoxColumn.DataPropertyName = "Machine";
+            this.machineDataGridViewTextBoxColumn.HeaderText = "Machine";
+            this.machineDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.machineDataGridViewTextBoxColumn.Name = "machineDataGridViewTextBoxColumn";
+            this.machineDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnUpload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Location = new System.Drawing.Point(753, 577);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(180, 38);
+            this.btnUpload.TabIndex = 71;
+            this.btnUpload.Text = "Cargar";
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(434, 718);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(180, 38);
+            this.btnCancel.TabIndex = 72;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmMachineryAssignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 859);
+            this.ClientSize = new System.Drawing.Size(1682, 859);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnUpload);
+            this.Controls.Add(this.grdMachineryAssignment);
             this.Controls.Add(this.lblMachinePicture);
             this.Controls.Add(this.pctMachine);
             this.Controls.Add(this.dtpAssignation);
@@ -193,7 +291,10 @@
             this.Controls.Add(this.lblMachineryAssignment);
             this.Name = "frmMachineryAssignment";
             this.Text = "Asignación de Maquinaria";
+            this.Load += new System.EventHandler(this.frmMachineryAssignment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMachineryAssignment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineryAssignmentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +315,13 @@
         private System.Windows.Forms.TextBox txtProject;
         private System.Windows.Forms.Label lblProject;
         private System.Windows.Forms.Label lblMachineryAssignment;
+        private System.Windows.Forms.DataGridView grdMachineryAssignment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assignationDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn machineDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource machineryAssignmentBindingSource;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

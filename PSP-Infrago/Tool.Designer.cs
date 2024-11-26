@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblProjectPicture = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -43,7 +44,17 @@
             this.txtToolId = new System.Windows.Forms.TextBox();
             this.lblToolID = new System.Windows.Forms.Label();
             this.lblTool = new System.Windows.Forms.Label();
+            this.grdTools = new System.Windows.Forms.DataGridView();
+            this.toolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityAvailableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolAssignmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctTool)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTools)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProjectPicture
@@ -60,45 +71,49 @@
             // 
             this.btnNew.BackColor = System.Drawing.Color.PeachPuff;
             this.btnNew.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(703, 653);
+            this.btnNew.Location = new System.Drawing.Point(627, 653);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(180, 38);
             this.btnNew.TabIndex = 72;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.PeachPuff;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(498, 653);
+            this.btnDelete.Location = new System.Drawing.Point(422, 653);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(180, 38);
             this.btnDelete.TabIndex = 71;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.PeachPuff;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(294, 653);
+            this.btnUpdate.Location = new System.Drawing.Point(218, 653);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(180, 38);
             this.btnUpdate.TabIndex = 70;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.PeachPuff;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(95, 653);
+            this.btnSave.Location = new System.Drawing.Point(19, 653);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(180, 38);
             this.btnSave.TabIndex = 69;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pctTool
             // 
@@ -111,6 +126,7 @@
             // 
             // txtAssignation
             // 
+            this.txtAssignation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.toolBindingSource, "ToolAssignment", true));
             this.txtAssignation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAssignation.Location = new System.Drawing.Point(311, 466);
             this.txtAssignation.Name = "txtAssignation";
@@ -129,6 +145,7 @@
             // 
             // txtQuantity
             // 
+            this.txtQuantity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.toolBindingSource, "QuantityAvailable", true));
             this.txtQuantity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.Location = new System.Drawing.Point(311, 410);
             this.txtQuantity.Name = "txtQuantity";
@@ -147,6 +164,7 @@
             // 
             // txtName
             // 
+            this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.toolBindingSource, "Name", true));
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(311, 353);
             this.txtName.Name = "txtName";
@@ -165,11 +183,13 @@
             // 
             // txtToolId
             // 
+            this.txtToolId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.toolBindingSource, "Id", true));
             this.txtToolId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtToolId.Location = new System.Drawing.Point(311, 297);
             this.txtToolId.Name = "txtToolId";
             this.txtToolId.Size = new System.Drawing.Size(342, 32);
             this.txtToolId.TabIndex = 61;
+            this.txtToolId.TextChanged += new System.EventHandler(this.frmTool_Load);
             // 
             // lblToolID
             // 
@@ -193,11 +213,91 @@
             this.lblTool.Text = "Herramienta";
             this.lblTool.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // grdTools
+            // 
+            this.grdTools.AutoGenerateColumns = false;
+            this.grdTools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdTools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.quantityAvailableDataGridViewTextBoxColumn,
+            this.toolAssignmentDataGridViewTextBoxColumn});
+            this.grdTools.DataSource = this.toolBindingSource;
+            this.grdTools.Location = new System.Drawing.Point(1033, 168);
+            this.grdTools.Name = "grdTools";
+            this.grdTools.RowHeadersWidth = 51;
+            this.grdTools.RowTemplate.Height = 24;
+            this.grdTools.Size = new System.Drawing.Size(605, 523);
+            this.grdTools.TabIndex = 74;
+            // 
+            // toolBindingSource
+            // 
+            this.toolBindingSource.DataSource = typeof(PSP_Infrago.Entities.Tool);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // quantityAvailableDataGridViewTextBoxColumn
+            // 
+            this.quantityAvailableDataGridViewTextBoxColumn.DataPropertyName = "QuantityAvailable";
+            this.quantityAvailableDataGridViewTextBoxColumn.HeaderText = "QuantityAvailable";
+            this.quantityAvailableDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantityAvailableDataGridViewTextBoxColumn.Name = "quantityAvailableDataGridViewTextBoxColumn";
+            this.quantityAvailableDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // toolAssignmentDataGridViewTextBoxColumn
+            // 
+            this.toolAssignmentDataGridViewTextBoxColumn.DataPropertyName = "ToolAssignment";
+            this.toolAssignmentDataGridViewTextBoxColumn.HeaderText = "ToolAssignment";
+            this.toolAssignmentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.toolAssignmentDataGridViewTextBoxColumn.Name = "toolAssignmentDataGridViewTextBoxColumn";
+            this.toolAssignmentDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnUpload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Location = new System.Drawing.Point(752, 528);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(180, 38);
+            this.btnUpload.TabIndex = 75;
+            this.btnUpload.Text = "Cargar";
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(824, 653);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(180, 38);
+            this.btnCancel.TabIndex = 76;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 859);
+            this.ClientSize = new System.Drawing.Size(1682, 859);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnUpload);
+            this.Controls.Add(this.grdTools);
             this.Controls.Add(this.lblProjectPicture);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
@@ -215,7 +315,10 @@
             this.Controls.Add(this.lblTool);
             this.Name = "frmTool";
             this.Text = "Herramienta";
+            this.Load += new System.EventHandler(this.frmTool_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctTool)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTools)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +341,13 @@
         private System.Windows.Forms.TextBox txtToolId;
         private System.Windows.Forms.Label lblToolID;
         private System.Windows.Forms.Label lblTool;
+        private System.Windows.Forms.DataGridView grdTools;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityAvailableDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn toolAssignmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource toolBindingSource;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

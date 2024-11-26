@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblMachinePicture = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -47,7 +48,20 @@
             this.txtCode = new System.Windows.Forms.TextBox();
             this.lblCode = new System.Windows.Forms.Label();
             this.lblMachinery = new System.Windows.Forms.Label();
+            this.grdMachinery = new System.Windows.Forms.DataGridView();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.machineryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMachinery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMachinePicture
@@ -70,6 +84,7 @@
             this.btnNew.TabIndex = 54;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnDelete
             // 
@@ -81,6 +96,7 @@
             this.btnDelete.TabIndex = 53;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -92,6 +108,7 @@
             this.btnUpdate.TabIndex = 52;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -103,6 +120,7 @@
             this.btnSave.TabIndex = 51;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pctMachine
             // 
@@ -115,6 +133,7 @@
             // 
             // txtDetails
             // 
+            this.txtDetails.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.machineryBindingSource, "Details", true));
             this.txtDetails.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDetails.Location = new System.Drawing.Point(308, 530);
             this.txtDetails.Name = "txtDetails";
@@ -133,6 +152,7 @@
             // 
             // txtAssignation
             // 
+            this.txtAssignation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.machineryBindingSource, "Assignment", true));
             this.txtAssignation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAssignation.Location = new System.Drawing.Point(308, 477);
             this.txtAssignation.Name = "txtAssignation";
@@ -151,6 +171,7 @@
             // 
             // txtCapacity
             // 
+            this.txtCapacity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.machineryBindingSource, "Capacity", true));
             this.txtCapacity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCapacity.Location = new System.Drawing.Point(308, 421);
             this.txtCapacity.Name = "txtCapacity";
@@ -169,6 +190,7 @@
             // 
             // txtName
             // 
+            this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.machineryBindingSource, "Name", true));
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(308, 364);
             this.txtName.Name = "txtName";
@@ -187,6 +209,7 @@
             // 
             // txtModel
             // 
+            this.txtModel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.machineryBindingSource, "Model", true));
             this.txtModel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModel.Location = new System.Drawing.Point(308, 312);
             this.txtModel.Name = "txtModel";
@@ -205,6 +228,7 @@
             // 
             // txtCode
             // 
+            this.txtCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.machineryBindingSource, "Code", true));
             this.txtCode.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCode.Location = new System.Drawing.Point(308, 261);
             this.txtCode.Name = "txtCode";
@@ -233,11 +257,118 @@
             this.lblMachinery.Text = "Maquinaria";
             this.lblMachinery.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // grdMachinery
+            // 
+            this.grdMachinery.AutoGenerateColumns = false;
+            this.grdMachinery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdMachinery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.codeDataGridViewTextBoxColumn,
+            this.modelDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.capacityDataGridViewTextBoxColumn,
+            this.detailsDataGridViewTextBoxColumn,
+            this.assignmentDataGridViewTextBoxColumn});
+            this.grdMachinery.DataSource = this.machineryBindingSource;
+            this.grdMachinery.Location = new System.Drawing.Point(1076, 156);
+            this.grdMachinery.Name = "grdMachinery";
+            this.grdMachinery.RowHeadersWidth = 51;
+            this.grdMachinery.RowTemplate.Height = 24;
+            this.grdMachinery.Size = new System.Drawing.Size(557, 546);
+            this.grdMachinery.TabIndex = 56;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(399, 730);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(180, 38);
+            this.btnCancel.TabIndex = 57;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnUpload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Location = new System.Drawing.Point(755, 565);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(180, 38);
+            this.btnUpload.TabIndex = 58;
+            this.btnUpload.Text = "Cargar";
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // machineryBindingSource
+            // 
+            this.machineryBindingSource.DataSource = typeof(PSP_Infrago.Entities.Machinery);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // codeDataGridViewTextBoxColumn
+            // 
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.codeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // capacityDataGridViewTextBoxColumn
+            // 
+            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
+            this.capacityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // detailsDataGridViewTextBoxColumn
+            // 
+            this.detailsDataGridViewTextBoxColumn.DataPropertyName = "Details";
+            this.detailsDataGridViewTextBoxColumn.HeaderText = "Details";
+            this.detailsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.detailsDataGridViewTextBoxColumn.Name = "detailsDataGridViewTextBoxColumn";
+            this.detailsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // assignmentDataGridViewTextBoxColumn
+            // 
+            this.assignmentDataGridViewTextBoxColumn.DataPropertyName = "Assignment";
+            this.assignmentDataGridViewTextBoxColumn.HeaderText = "Assignment";
+            this.assignmentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.assignmentDataGridViewTextBoxColumn.Name = "assignmentDataGridViewTextBoxColumn";
+            this.assignmentDataGridViewTextBoxColumn.Width = 125;
+            // 
             // frmMachinery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 859);
+            this.ClientSize = new System.Drawing.Size(1682, 859);
+            this.Controls.Add(this.btnUpload);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.grdMachinery);
             this.Controls.Add(this.lblMachinePicture);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
@@ -259,7 +390,10 @@
             this.Controls.Add(this.lblMachinery);
             this.Name = "frmMachinery";
             this.Text = "Maquinaria";
+            this.Load += new System.EventHandler(this.frmMachinery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMachinery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +420,16 @@
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.Label lblMachinery;
+        private System.Windows.Forms.BindingSource machineryBindingSource;
+        private System.Windows.Forms.DataGridView grdMachinery;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detailsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assignmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnUpload;
     }
 }

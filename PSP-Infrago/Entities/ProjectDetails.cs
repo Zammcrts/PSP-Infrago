@@ -8,5 +8,6 @@
         public float Cost { get; set; }
         public string Project { get; set; }
         public string Service { get; set; }
+        public string Photo { get; set; }
     }
 }

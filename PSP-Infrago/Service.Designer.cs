@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -41,6 +42,15 @@
             this.txtServiceId = new System.Windows.Forms.TextBox();
             this.lblServiceID = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
+            this.grdService = new System.Windows.Forms.DataGridView();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grdService)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNew
@@ -53,6 +63,7 @@
             this.btnNew.TabIndex = 66;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnDelete
             // 
@@ -64,6 +75,7 @@
             this.btnDelete.TabIndex = 65;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -75,6 +87,7 @@
             this.btnUpdate.TabIndex = 64;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -86,9 +99,11 @@
             this.btnSave.TabIndex = 63;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtDetails
             // 
+            this.txtDetails.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.serviceBindingSource, "Details", true));
             this.txtDetails.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDetails.Location = new System.Drawing.Point(464, 469);
             this.txtDetails.Name = "txtDetails";
@@ -107,6 +122,7 @@
             // 
             // txtName
             // 
+            this.txtName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.serviceBindingSource, "Name", true));
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(464, 411);
             this.txtName.Name = "txtName";
@@ -125,6 +141,7 @@
             // 
             // txtCost
             // 
+            this.txtCost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.serviceBindingSource, "Cost", true));
             this.txtCost.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCost.Location = new System.Drawing.Point(464, 359);
             this.txtCost.Name = "txtCost";
@@ -143,6 +160,7 @@
             // 
             // txtServiceId
             // 
+            this.txtServiceId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.serviceBindingSource, "Id", true));
             this.txtServiceId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtServiceId.Location = new System.Drawing.Point(464, 308);
             this.txtServiceId.Name = "txtServiceId";
@@ -171,11 +189,79 @@
             this.lblService.Text = "Servicio";
             this.lblService.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // grdService
+            // 
+            this.grdService.AutoGenerateColumns = false;
+            this.grdService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdService.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.detailsDataGridViewTextBoxColumn});
+            this.grdService.DataSource = this.serviceBindingSource;
+            this.grdService.Location = new System.Drawing.Point(1029, 207);
+            this.grdService.Name = "grdService";
+            this.grdService.RowHeadersWidth = 51;
+            this.grdService.RowTemplate.Height = 24;
+            this.grdService.Size = new System.Drawing.Size(541, 444);
+            this.grdService.TabIndex = 67;
+            this.grdService.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataSource = typeof(PSP_Infrago.Entities.Service);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // detailsDataGridViewTextBoxColumn
+            // 
+            this.detailsDataGridViewTextBoxColumn.DataPropertyName = "Details";
+            this.detailsDataGridViewTextBoxColumn.HeaderText = "Details";
+            this.detailsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.detailsDataGridViewTextBoxColumn.Name = "detailsDataGridViewTextBoxColumn";
+            this.detailsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Khaki;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(441, 686);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(180, 38);
+            this.btnCancel.TabIndex = 68;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 859);
+            this.ClientSize = new System.Drawing.Size(1682, 859);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.grdService);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -191,6 +277,9 @@
             this.Controls.Add(this.lblService);
             this.Name = "frmService";
             this.Text = "Servicio";
+            this.Load += new System.EventHandler(this.frmService_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdService)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,5 +300,12 @@
         private System.Windows.Forms.TextBox txtServiceId;
         private System.Windows.Forms.Label lblServiceID;
         private System.Windows.Forms.Label lblService;
+        private System.Windows.Forms.DataGridView grdService;
+        private System.Windows.Forms.BindingSource serviceBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detailsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

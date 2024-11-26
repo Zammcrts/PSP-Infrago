@@ -9,6 +9,7 @@
         public string Capacity { get; set; }
         public string Details { get; set; }
         public string Assignment { get; set; }
+        public string Photo { get; set; }
 
     }
 }

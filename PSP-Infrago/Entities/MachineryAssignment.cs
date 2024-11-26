@@ -6,5 +6,6 @@
         public string Project { get; set; }
         public string AssignationDate { get; set; }
         public string Machine { get; set; }
+        public string Photo { get; set; }
     }
 }

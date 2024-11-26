@@ -6,5 +6,6 @@
         public string Date { get; set; }
         public string Tool { get; set; }
         public string Project { get; set; }
+        public string Photo { get; set; }
     }
 }

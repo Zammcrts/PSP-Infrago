@@ -6,5 +6,6 @@
         public string Name { get; set; }
         public int QuantityAvailable { get; set; }
         public string ToolAssignment { get; set; }
+        public string Photo { get; set; }
     }
 }

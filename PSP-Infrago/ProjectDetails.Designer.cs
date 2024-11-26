@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblProjectPicture = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -45,7 +46,19 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblProjectDetail = new System.Windows.Forms.Label();
+            this.grdProjectDetails = new System.Windows.Forms.DataGridView();
+            this.btnUpload = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.projectDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pctDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProjectDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProjectPicture
@@ -68,6 +81,7 @@
             this.btnNew.TabIndex = 73;
             this.btnNew.Text = "Nuevo";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnDelete
             // 
@@ -79,6 +93,7 @@
             this.btnDelete.TabIndex = 72;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -90,6 +105,7 @@
             this.btnUpdate.TabIndex = 71;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -101,6 +117,7 @@
             this.btnSave.TabIndex = 70;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pctDetails
             // 
@@ -113,6 +130,7 @@
             // 
             // txtService
             // 
+            this.txtService.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectDetailsBindingSource, "Service", true));
             this.txtService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtService.Location = new System.Drawing.Point(308, 483);
             this.txtService.Name = "txtService";
@@ -131,6 +149,7 @@
             // 
             // txtProject
             // 
+            this.txtProject.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectDetailsBindingSource, "Project", true));
             this.txtProject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProject.Location = new System.Drawing.Point(308, 427);
             this.txtProject.Name = "txtProject";
@@ -149,6 +168,7 @@
             // 
             // txtCost
             // 
+            this.txtCost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectDetailsBindingSource, "Cost", true));
             this.txtCost.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCost.Location = new System.Drawing.Point(308, 370);
             this.txtCost.Name = "txtCost";
@@ -167,6 +187,7 @@
             // 
             // txtServiceType
             // 
+            this.txtServiceType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectDetailsBindingSource, "ServiceType", true));
             this.txtServiceType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtServiceType.Location = new System.Drawing.Point(308, 318);
             this.txtServiceType.Name = "txtServiceType";
@@ -185,6 +206,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectDetailsBindingSource, "Description", true));
             this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(308, 267);
             this.txtDescription.Name = "txtDescription";
@@ -213,11 +235,109 @@
             this.lblProjectDetail.Text = "Detalles de Proyecto";
             this.lblProjectDetail.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // grdProjectDetails
+            // 
+            this.grdProjectDetails.AutoGenerateColumns = false;
+            this.grdProjectDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProjectDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.serviceTypeDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.projectDataGridViewTextBoxColumn,
+            this.serviceDataGridViewTextBoxColumn});
+            this.grdProjectDetails.DataSource = this.projectDetailsBindingSource;
+            this.grdProjectDetails.Location = new System.Drawing.Point(1037, 157);
+            this.grdProjectDetails.Name = "grdProjectDetails";
+            this.grdProjectDetails.RowHeadersWidth = 51;
+            this.grdProjectDetails.RowTemplate.Height = 24;
+            this.grdProjectDetails.Size = new System.Drawing.Size(576, 545);
+            this.grdProjectDetails.TabIndex = 75;
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnUpload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Location = new System.Drawing.Point(757, 539);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(180, 38);
+            this.btnUpload.TabIndex = 76;
+            this.btnUpload.Text = "Cargar";
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(421, 724);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(180, 38);
+            this.btnCancel.TabIndex = 77;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // projectDetailsBindingSource
+            // 
+            this.projectDetailsBindingSource.DataSource = typeof(PSP_Infrago.Entities.ProjectDetails);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // serviceTypeDataGridViewTextBoxColumn
+            // 
+            this.serviceTypeDataGridViewTextBoxColumn.DataPropertyName = "ServiceType";
+            this.serviceTypeDataGridViewTextBoxColumn.HeaderText = "ServiceType";
+            this.serviceTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.serviceTypeDataGridViewTextBoxColumn.Name = "serviceTypeDataGridViewTextBoxColumn";
+            this.serviceTypeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // projectDataGridViewTextBoxColumn
+            // 
+            this.projectDataGridViewTextBoxColumn.DataPropertyName = "Project";
+            this.projectDataGridViewTextBoxColumn.HeaderText = "Project";
+            this.projectDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.projectDataGridViewTextBoxColumn.Name = "projectDataGridViewTextBoxColumn";
+            this.projectDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // serviceDataGridViewTextBoxColumn
+            // 
+            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "Service";
+            this.serviceDataGridViewTextBoxColumn.HeaderText = "Service";
+            this.serviceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
+            this.serviceDataGridViewTextBoxColumn.Width = 125;
+            // 
             // frmProjectDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 859);
+            this.ClientSize = new System.Drawing.Size(1682, 859);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnUpload);
+            this.Controls.Add(this.grdProjectDetails);
             this.Controls.Add(this.lblProjectPicture);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
@@ -237,7 +357,10 @@
             this.Controls.Add(this.lblProjectDetail);
             this.Name = "frmProjectDetails";
             this.Text = "Detalles del Projecto";
+            this.Load += new System.EventHandler(this.frmProjectDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProjectDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +385,15 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblProjectDetail;
+        private System.Windows.Forms.DataGridView grdProjectDetails;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.BindingSource projectDetailsBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
     }
 }

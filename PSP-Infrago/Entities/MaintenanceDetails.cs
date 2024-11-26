@@ -8,5 +8,6 @@
         public float Cost { get; set; }
         public string Maintenance { get; set; }
         public string Machinery { get; set; }
+        public string Photo { get; set; }
     }
 }

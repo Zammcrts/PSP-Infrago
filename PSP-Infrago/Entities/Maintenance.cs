@@ -9,5 +9,5 @@
         public string Description { get; set; }
         public float Cost { get; set; }
         public string Details { get; set; }
+        public string Photo { get; set; }
     }
-}
