@@ -142,6 +142,10 @@
     <Compile Include="Migrations\202411251731453_DatannotationsZam.Designer.cs">
       <DependentUpon>202411251731453_DatannotationsZam.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411261739473_correctionMigration.cs" />
+    <Compile Include="Migrations\202411261739473_correctionMigration.Designer.cs">
+      <DependentUpon>202411261739473_correctionMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
@@ -228,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411251731453_DatannotationsZam.resx">
       <DependentUpon>202411251731453_DatannotationsZam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411261739473_correctionMigration.resx">
+      <DependentUpon>202411261739473_correctionMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>

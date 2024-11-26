@@ -58,7 +58,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlStyle2 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrProvider = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.providerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,18 +72,13 @@
             this.materialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.providerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grpData
             // 
             this.grpData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.grpData.Controls.Add(this.bttNew);
-            this.grpData.Controls.Add(this.bttCancel);
-            this.grpData.Controls.Add(this.bttUpdate);
-            this.grpData.Controls.Add(this.bttDelete);
-            this.grpData.Controls.Add(this.bttSave);
             this.grpData.Controls.Add(this.lblCity);
             this.grpData.Controls.Add(this.txtCity);
             this.grpData.Controls.Add(this.txtZipcode);
@@ -107,7 +102,7 @@
             this.grpData.Font = new System.Drawing.Font("Typo Grotesk", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpData.Location = new System.Drawing.Point(22, 113);
             this.grpData.Name = "grpData";
-            this.grpData.Size = new System.Drawing.Size(914, 517);
+            this.grpData.Size = new System.Drawing.Size(914, 397);
             this.grpData.TabIndex = 16;
             this.grpData.TabStop = false;
             this.grpData.Text = "Datos del Proveedor";
@@ -117,60 +112,65 @@
             this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttNew.Location = new System.Drawing.Point(92, 468);
+            this.bttNew.Location = new System.Drawing.Point(123, 583);
             this.bttNew.Name = "bttNew";
             this.bttNew.Size = new System.Drawing.Size(122, 33);
             this.bttNew.TabIndex = 37;
             this.bttNew.Text = "Nuevo";
             this.bttNew.UseVisualStyleBackColor = false;
+            this.bttNew.Click += new System.EventHandler(this.bttNew_Click);
             // 
             // bttCancel
             // 
             this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttCancel.Location = new System.Drawing.Point(512, 468);
+            this.bttCancel.Location = new System.Drawing.Point(543, 583);
             this.bttCancel.Name = "bttCancel";
             this.bttCancel.Size = new System.Drawing.Size(122, 33);
             this.bttCancel.TabIndex = 36;
             this.bttCancel.Text = "Cancelar";
             this.bttCancel.UseVisualStyleBackColor = false;
+            this.bttCancel.Click += new System.EventHandler(this.bttCancel_Click);
             // 
             // bttUpdate
             // 
             this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttUpdate.Location = new System.Drawing.Point(374, 468);
+            this.bttUpdate.Location = new System.Drawing.Point(405, 583);
             this.bttUpdate.Name = "bttUpdate";
             this.bttUpdate.Size = new System.Drawing.Size(122, 33);
             this.bttUpdate.TabIndex = 35;
             this.bttUpdate.Text = "Actualizar";
             this.bttUpdate.UseVisualStyleBackColor = false;
+            this.bttUpdate.Click += new System.EventHandler(this.bttUpdate_Click);
             // 
             // bttDelete
             // 
             this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttDelete.Location = new System.Drawing.Point(654, 468);
+            this.bttDelete.Location = new System.Drawing.Point(685, 583);
             this.bttDelete.Name = "bttDelete";
             this.bttDelete.Size = new System.Drawing.Size(122, 33);
             this.bttDelete.TabIndex = 34;
             this.bttDelete.Text = "Eliminar";
             this.bttDelete.UseVisualStyleBackColor = false;
+            this.bttDelete.Click += new System.EventHandler(this.bttDelete_Click);
             // 
             // bttSave
             // 
             this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttSave.Location = new System.Drawing.Point(234, 468);
+            this.bttSave.Location = new System.Drawing.Point(265, 583);
             this.bttSave.Name = "bttSave";
             this.bttSave.Size = new System.Drawing.Size(122, 33);
             this.bttSave.TabIndex = 33;
             this.bttSave.Text = "Guardar";
             this.bttSave.UseVisualStyleBackColor = false;
+            this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
             // 
             // lblCity
             // 
@@ -185,6 +185,7 @@
             // txtCity
             // 
             this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "City", true));
             this.txtCity.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCity.Location = new System.Drawing.Point(130, 334);
             this.txtCity.Name = "txtCity";
@@ -194,6 +195,7 @@
             // txtZipcode
             // 
             this.txtZipcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZipcode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "ZipCode", true));
             this.txtZipcode.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtZipcode.Location = new System.Drawing.Point(733, 333);
             this.txtZipcode.Name = "txtZipcode";
@@ -203,6 +205,7 @@
             // txtTownship
             // 
             this.txtTownship.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTownship.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Township", true));
             this.txtTownship.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTownship.Location = new System.Drawing.Point(600, 276);
             this.txtTownship.Name = "txtTownship";
@@ -212,6 +215,7 @@
             // txtState
             // 
             this.txtState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "State", true));
             this.txtState.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtState.Location = new System.Drawing.Point(130, 272);
             this.txtState.Name = "txtState";
@@ -221,6 +225,7 @@
             // txtExteriorNumber
             // 
             this.txtExteriorNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExteriorNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "ExteriorNumber", true));
             this.txtExteriorNumber.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExteriorNumber.Location = new System.Drawing.Point(663, 216);
             this.txtExteriorNumber.Name = "txtExteriorNumber";
@@ -230,6 +235,7 @@
             // txtStreet
             // 
             this.txtStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStreet.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Street", true));
             this.txtStreet.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStreet.Location = new System.Drawing.Point(130, 216);
             this.txtStreet.Name = "txtStreet";
@@ -239,6 +245,7 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Email", true));
             this.txtEmail.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(551, 158);
             this.txtEmail.Name = "txtEmail";
@@ -248,6 +255,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhoneNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "PhoneNumber", true));
             this.txtPhoneNumber.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(132, 160);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
@@ -257,6 +265,7 @@
             // txtMaterial
             // 
             this.txtMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaterial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "Material", true));
             this.txtMaterial.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaterial.Location = new System.Drawing.Point(133, 104);
             this.txtMaterial.Name = "txtMaterial";
@@ -286,6 +295,7 @@
             // txtProviderName
             // 
             this.txtProviderName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProviderName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.providerBindingSource, "ProviderName", true));
             this.txtProviderName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProviderName.Location = new System.Drawing.Point(272, 52);
             this.txtProviderName.Name = "txtProviderName";
@@ -388,11 +398,11 @@
             this.pnlStyle1.Size = new System.Drawing.Size(1724, 39);
             this.pnlStyle1.TabIndex = 13;
             // 
-            // dataGridView1
+            // dgrProvider
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrProvider.AutoGenerateColumns = false;
+            this.dgrProvider.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrProvider.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.providerNameDataGridViewTextBoxColumn,
             this.phoneNumberDataGridViewTextBoxColumn,
@@ -404,13 +414,14 @@
             this.townshipDataGridViewTextBoxColumn,
             this.zipCodeDataGridViewTextBoxColumn,
             this.materialDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.providerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(942, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(728, 585);
-            this.dataGridView1.TabIndex = 17;
+            this.dgrProvider.DataSource = this.providerBindingSource;
+            this.dgrProvider.Location = new System.Drawing.Point(942, 43);
+            this.dgrProvider.Name = "dgrProvider";
+            this.dgrProvider.RowHeadersWidth = 51;
+            this.dgrProvider.RowTemplate.Height = 24;
+            this.dgrProvider.Size = new System.Drawing.Size(728, 585);
+            this.dgrProvider.TabIndex = 17;
+            this.dgrProvider.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrProvider_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -510,17 +521,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1682, 673);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.bttNew);
+            this.Controls.Add(this.dgrProvider);
+            this.Controls.Add(this.bttDelete);
+            this.Controls.Add(this.bttCancel);
             this.Controls.Add(this.grpData);
+            this.Controls.Add(this.bttSave);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.bttUpdate);
             this.Controls.Add(this.pnlStyle2);
             this.Controls.Add(this.pnlStyle1);
             this.Name = "frmProvider";
             this.Text = "Provider";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmProvider_FormClosed);
+            this.Load += new System.EventHandler(this.frmProvider_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.providerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -553,7 +570,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlStyle2;
         private System.Windows.Forms.Panel pnlStyle1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrProvider;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn providerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;

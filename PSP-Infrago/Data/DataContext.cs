@@ -11,7 +11,7 @@ namespace PSP_Infrago.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Project> Projects { get; set; }
-        public DbSet<Provider> providers { get; set; }
+        public DbSet<Provider> Providers { get; set; }
         public DbSet<Tool> Tools { get; set; }
         public DbSet<ToolAssignment> ToolAssignments { get; set; }
         public DbSet<Maintenance> Maintenances { get; set; }

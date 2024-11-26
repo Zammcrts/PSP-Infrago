@@ -37,11 +37,6 @@
             this.bttUpdate = new System.Windows.Forms.Button();
             this.bttDelete = new System.Windows.Forms.Button();
             this.bttSave = new System.Windows.Forms.Button();
-            this.grpStatus = new System.Windows.Forms.GroupBox();
-            this.rdbCancelled = new System.Windows.Forms.RadioButton();
-            this.rdbFinished = new System.Windows.Forms.RadioButton();
-            this.rdbPendind = new System.Windows.Forms.RadioButton();
-            this.rdbActive = new System.Windows.Forms.RadioButton();
             this.dttAssignationDate = new System.Windows.Forms.DateTimePicker();
             this.dttEndDate = new System.Windows.Forms.DateTimePicker();
             this.dttStartDate = new System.Windows.Forms.DateTimePicker();
@@ -56,7 +51,8 @@
             this.lblProject = new System.Windows.Forms.Label();
             this.lblClient = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrProject = new System.Windows.Forms.DataGridView();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,8 +63,7 @@
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
-            this.grpStatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrProject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,12 +86,7 @@
             // grpData
             // 
             this.grpData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.grpData.Controls.Add(this.bttNew);
-            this.grpData.Controls.Add(this.bttCancel);
-            this.grpData.Controls.Add(this.bttUpdate);
-            this.grpData.Controls.Add(this.bttDelete);
-            this.grpData.Controls.Add(this.bttSave);
-            this.grpData.Controls.Add(this.grpStatus);
+            this.grpData.Controls.Add(this.cmbStatus);
             this.grpData.Controls.Add(this.dttAssignationDate);
             this.grpData.Controls.Add(this.dttEndDate);
             this.grpData.Controls.Add(this.dttStartDate);
@@ -113,7 +103,7 @@
             this.grpData.Font = new System.Drawing.Font("Typo Grotesk", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpData.Location = new System.Drawing.Point(22, 111);
             this.grpData.Name = "grpData";
-            this.grpData.Size = new System.Drawing.Size(914, 521);
+            this.grpData.Size = new System.Drawing.Size(914, 467);
             this.grpData.TabIndex = 6;
             this.grpData.TabStop = false;
             this.grpData.Text = "Datos del proyecto";
@@ -123,124 +113,70 @@
             this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttNew.Location = new System.Drawing.Point(115, 482);
+            this.bttNew.Location = new System.Drawing.Point(127, 599);
             this.bttNew.Name = "bttNew";
             this.bttNew.Size = new System.Drawing.Size(122, 33);
             this.bttNew.TabIndex = 25;
             this.bttNew.Text = "Nuevo";
             this.bttNew.UseVisualStyleBackColor = false;
+            this.bttNew.Click += new System.EventHandler(this.bttNew_Click);
             // 
             // bttCancel
             // 
             this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttCancel.Location = new System.Drawing.Point(535, 482);
+            this.bttCancel.Location = new System.Drawing.Point(547, 599);
             this.bttCancel.Name = "bttCancel";
             this.bttCancel.Size = new System.Drawing.Size(122, 33);
             this.bttCancel.TabIndex = 24;
             this.bttCancel.Text = "Cancelar";
             this.bttCancel.UseVisualStyleBackColor = false;
+            this.bttCancel.Click += new System.EventHandler(this.bttCancel_Click);
             // 
             // bttUpdate
             // 
             this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttUpdate.Location = new System.Drawing.Point(397, 482);
+            this.bttUpdate.Location = new System.Drawing.Point(409, 599);
             this.bttUpdate.Name = "bttUpdate";
             this.bttUpdate.Size = new System.Drawing.Size(122, 33);
             this.bttUpdate.TabIndex = 23;
             this.bttUpdate.Text = "Actualizar";
             this.bttUpdate.UseVisualStyleBackColor = false;
+            this.bttUpdate.Click += new System.EventHandler(this.bttUpdate_Click);
             // 
             // bttDelete
             // 
             this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttDelete.Location = new System.Drawing.Point(677, 482);
+            this.bttDelete.Location = new System.Drawing.Point(689, 599);
             this.bttDelete.Name = "bttDelete";
             this.bttDelete.Size = new System.Drawing.Size(122, 33);
             this.bttDelete.TabIndex = 22;
             this.bttDelete.Text = "Eliminar";
             this.bttDelete.UseVisualStyleBackColor = false;
+            this.bttDelete.Click += new System.EventHandler(this.bttDelete_Click);
             // 
             // bttSave
             // 
             this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttSave.Location = new System.Drawing.Point(257, 482);
+            this.bttSave.Location = new System.Drawing.Point(269, 599);
             this.bttSave.Name = "bttSave";
             this.bttSave.Size = new System.Drawing.Size(122, 33);
             this.bttSave.TabIndex = 21;
             this.bttSave.Text = "Guardar";
             this.bttSave.UseVisualStyleBackColor = false;
-            // 
-            // grpStatus
-            // 
-            this.grpStatus.Controls.Add(this.rdbCancelled);
-            this.grpStatus.Controls.Add(this.rdbFinished);
-            this.grpStatus.Controls.Add(this.rdbPendind);
-            this.grpStatus.Controls.Add(this.rdbActive);
-            this.grpStatus.Location = new System.Drawing.Point(258, 386);
-            this.grpStatus.Name = "grpStatus";
-            this.grpStatus.Size = new System.Drawing.Size(571, 61);
-            this.grpStatus.TabIndex = 15;
-            this.grpStatus.TabStop = false;
-            // 
-            // rdbCancelled
-            // 
-            this.rdbCancelled.AutoSize = true;
-            this.rdbCancelled.Font = new System.Drawing.Font("Typo Grotesk", 10F);
-            this.rdbCancelled.Location = new System.Drawing.Point(432, 20);
-            this.rdbCancelled.Name = "rdbCancelled";
-            this.rdbCancelled.Size = new System.Drawing.Size(114, 24);
-            this.rdbCancelled.TabIndex = 17;
-            this.rdbCancelled.TabStop = true;
-            this.rdbCancelled.Text = "Cancelado";
-            this.rdbCancelled.UseVisualStyleBackColor = true;
-            // 
-            // rdbFinished
-            // 
-            this.rdbFinished.AutoSize = true;
-            this.rdbFinished.Font = new System.Drawing.Font("Typo Grotesk", 10F);
-            this.rdbFinished.Location = new System.Drawing.Point(287, 20);
-            this.rdbFinished.Name = "rdbFinished";
-            this.rdbFinished.Size = new System.Drawing.Size(112, 24);
-            this.rdbFinished.TabIndex = 16;
-            this.rdbFinished.TabStop = true;
-            this.rdbFinished.Text = "Terminado";
-            this.rdbFinished.UseVisualStyleBackColor = true;
-            // 
-            // rdbPendind
-            // 
-            this.rdbPendind.AutoSize = true;
-            this.rdbPendind.Font = new System.Drawing.Font("Typo Grotesk", 10F);
-            this.rdbPendind.Location = new System.Drawing.Point(127, 20);
-            this.rdbPendind.Name = "rdbPendind";
-            this.rdbPendind.Size = new System.Drawing.Size(106, 24);
-            this.rdbPendind.TabIndex = 15;
-            this.rdbPendind.TabStop = true;
-            this.rdbPendind.Text = "Pendiente";
-            this.rdbPendind.UseVisualStyleBackColor = true;
-            // 
-            // rdbActive
-            // 
-            this.rdbActive.AutoSize = true;
-            this.rdbActive.Font = new System.Drawing.Font("Typo Grotesk", 10F);
-            this.rdbActive.Location = new System.Drawing.Point(6, 20);
-            this.rdbActive.Name = "rdbActive";
-            this.rdbActive.Size = new System.Drawing.Size(76, 24);
-            this.rdbActive.TabIndex = 14;
-            this.rdbActive.TabStop = true;
-            this.rdbActive.Text = "Activo";
-            this.rdbActive.UseVisualStyleBackColor = true;
+            this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
             // 
             // dttAssignationDate
             // 
             this.dttAssignationDate.CalendarFont = new System.Drawing.Font("Typo Grotesk", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttAssignationDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectBindingSource, "AssignationDate", true));
             this.dttAssignationDate.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttAssignationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dttAssignationDate.Location = new System.Drawing.Point(262, 341);
@@ -251,6 +187,7 @@
             // dttEndDate
             // 
             this.dttEndDate.CalendarFont = new System.Drawing.Font("Typo Grotesk", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttEndDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectBindingSource, "EndDate", true));
             this.dttEndDate.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dttEndDate.Location = new System.Drawing.Point(262, 279);
@@ -261,6 +198,7 @@
             // dttStartDate
             // 
             this.dttStartDate.CalendarFont = new System.Drawing.Font("Typo Grotesk", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttStartDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectBindingSource, "StartDate", true));
             this.dttStartDate.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dttStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dttStartDate.Location = new System.Drawing.Point(262, 214);
@@ -271,6 +209,7 @@
             // txtBudget
             // 
             this.txtBudget.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBudget.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectBindingSource, "Budget", true));
             this.txtBudget.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBudget.Location = new System.Drawing.Point(159, 154);
             this.txtBudget.Name = "txtBudget";
@@ -280,6 +219,7 @@
             // txtProject
             // 
             this.txtProject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProject.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectBindingSource, "ProjectName", true));
             this.txtProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProject.Location = new System.Drawing.Point(159, 102);
             this.txtProject.Name = "txtProject";
@@ -289,6 +229,7 @@
             // txtClient
             // 
             this.txtClient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtClient.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectBindingSource, "Client", true));
             this.txtClient.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClient.Location = new System.Drawing.Point(159, 47);
             this.txtClient.Name = "txtClient";
@@ -375,11 +316,11 @@
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "Registro de Proyecto";
             // 
-            // dataGridView1
+            // dgrProject
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrProject.AutoGenerateColumns = false;
+            this.dgrProject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrProject.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.clientDataGridViewTextBoxColumn,
             this.projectNameDataGridViewTextBoxColumn,
@@ -388,13 +329,24 @@
             this.assignationDateDataGridViewTextBoxColumn,
             this.budgetDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.projectBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(942, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(728, 590);
-            this.dataGridView1.TabIndex = 9;
+            this.dgrProject.DataSource = this.projectBindingSource;
+            this.dgrProject.Location = new System.Drawing.Point(942, 42);
+            this.dgrProject.Name = "dgrProject";
+            this.dgrProject.RowHeadersWidth = 51;
+            this.dgrProject.RowTemplate.Height = 24;
+            this.dgrProject.Size = new System.Drawing.Size(728, 590);
+            this.dgrProject.TabIndex = 9;
+            this.dgrProject.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProject_CellContentClick);
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectBindingSource, "Status", true));
+            this.cmbStatus.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(249, 397);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(637, 34);
+            this.cmbStatus.TabIndex = 14;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -470,19 +422,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1682, 673);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.bttNew);
+            this.Controls.Add(this.dgrProject);
+            this.Controls.Add(this.bttDelete);
+            this.Controls.Add(this.bttCancel);
             this.Controls.Add(this.pnlStyle2);
+            this.Controls.Add(this.bttSave);
             this.Controls.Add(this.pnlStyle1);
+            this.Controls.Add(this.bttUpdate);
             this.Controls.Add(this.grpData);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmProject";
             this.Text = "Project";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmProject_FormClosed);
+            this.Load += new System.EventHandler(this.frmProject_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
-            this.grpStatus.ResumeLayout(false);
-            this.grpStatus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrProject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -494,11 +450,6 @@
         private System.Windows.Forms.Panel pnlStyle2;
         private System.Windows.Forms.Panel pnlStyle1;
         private System.Windows.Forms.GroupBox grpData;
-        private System.Windows.Forms.GroupBox grpStatus;
-        private System.Windows.Forms.RadioButton rdbCancelled;
-        private System.Windows.Forms.RadioButton rdbFinished;
-        private System.Windows.Forms.RadioButton rdbPendind;
-        private System.Windows.Forms.RadioButton rdbActive;
         private System.Windows.Forms.DateTimePicker dttAssignationDate;
         private System.Windows.Forms.DateTimePicker dttEndDate;
         private System.Windows.Forms.DateTimePicker dttStartDate;
@@ -518,7 +469,7 @@
         private System.Windows.Forms.Button bttUpdate;
         private System.Windows.Forms.Button bttDelete;
         private System.Windows.Forms.Button bttSave;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrProject;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn projectNameDataGridViewTextBoxColumn;
@@ -528,5 +479,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn budgetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource projectBindingSource;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }

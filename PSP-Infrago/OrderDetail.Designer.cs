@@ -47,7 +47,7 @@
             this.lblProject = new System.Windows.Forms.Label();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrOrderDetails = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@
             this.pricePerUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrOrderDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,11 +70,6 @@
             // grpData
             // 
             this.grpData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
-            this.grpData.Controls.Add(this.bttNew);
-            this.grpData.Controls.Add(this.bttCancel);
-            this.grpData.Controls.Add(this.bttUpdate);
-            this.grpData.Controls.Add(this.bttDelete);
-            this.grpData.Controls.Add(this.bttSave);
             this.grpData.Controls.Add(this.txtMaterial);
             this.grpData.Controls.Add(this.lblMaterial);
             this.grpData.Controls.Add(this.txtPricePerUnit);
@@ -87,7 +82,7 @@
             this.grpData.Font = new System.Drawing.Font("Typo Grotesk", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpData.Location = new System.Drawing.Point(18, 113);
             this.grpData.Name = "grpData";
-            this.grpData.Size = new System.Drawing.Size(914, 338);
+            this.grpData.Size = new System.Drawing.Size(914, 280);
             this.grpData.TabIndex = 17;
             this.grpData.TabStop = false;
             this.grpData.Text = "Datos de la asignación del material";
@@ -97,64 +92,70 @@
             this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttNew.Location = new System.Drawing.Point(112, 299);
+            this.bttNew.Location = new System.Drawing.Point(97, 412);
             this.bttNew.Name = "bttNew";
             this.bttNew.Size = new System.Drawing.Size(122, 33);
             this.bttNew.TabIndex = 36;
             this.bttNew.Text = "Nuevo";
             this.bttNew.UseVisualStyleBackColor = false;
+            this.bttNew.Click += new System.EventHandler(this.bttNew_Click);
             // 
             // bttCancel
             // 
             this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttCancel.Location = new System.Drawing.Point(532, 299);
+            this.bttCancel.Location = new System.Drawing.Point(517, 412);
             this.bttCancel.Name = "bttCancel";
             this.bttCancel.Size = new System.Drawing.Size(122, 33);
             this.bttCancel.TabIndex = 35;
             this.bttCancel.Text = "Cancelar";
             this.bttCancel.UseVisualStyleBackColor = false;
+            this.bttCancel.Click += new System.EventHandler(this.bttCancel_Click);
             // 
             // bttUpdate
             // 
             this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttUpdate.Location = new System.Drawing.Point(394, 299);
+            this.bttUpdate.Location = new System.Drawing.Point(379, 412);
             this.bttUpdate.Name = "bttUpdate";
             this.bttUpdate.Size = new System.Drawing.Size(122, 33);
             this.bttUpdate.TabIndex = 34;
             this.bttUpdate.Text = "Actualizar";
             this.bttUpdate.UseVisualStyleBackColor = false;
+            this.bttUpdate.Click += new System.EventHandler(this.bttUpdate_Click);
             // 
             // bttDelete
             // 
             this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttDelete.Location = new System.Drawing.Point(674, 299);
+            this.bttDelete.Location = new System.Drawing.Point(659, 412);
             this.bttDelete.Name = "bttDelete";
             this.bttDelete.Size = new System.Drawing.Size(122, 33);
             this.bttDelete.TabIndex = 33;
             this.bttDelete.Text = "Eliminar";
             this.bttDelete.UseVisualStyleBackColor = false;
+            this.bttDelete.Click += new System.EventHandler(this.bttDelete_Click);
             // 
             // bttSave
             // 
             this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
             this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttSave.Location = new System.Drawing.Point(254, 299);
+            this.bttSave.Location = new System.Drawing.Point(239, 412);
             this.bttSave.Name = "bttSave";
             this.bttSave.Size = new System.Drawing.Size(122, 33);
             this.bttSave.TabIndex = 32;
             this.bttSave.Text = "Guardar";
             this.bttSave.UseVisualStyleBackColor = false;
+            this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
             // 
             // txtMaterial
             // 
             this.txtMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaterial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderDetailBindingSource, "Material", true));
             this.txtMaterial.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaterial.Location = new System.Drawing.Point(127, 117);
             this.txtMaterial.Name = "txtMaterial";
@@ -174,6 +175,7 @@
             // txtPricePerUnit
             // 
             this.txtPricePerUnit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPricePerUnit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderDetailBindingSource, "PricePerUnit", true));
             this.txtPricePerUnit.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPricePerUnit.Location = new System.Drawing.Point(232, 224);
             this.txtPricePerUnit.Name = "txtPricePerUnit";
@@ -193,6 +195,7 @@
             // txtQuantityInStock
             // 
             this.txtQuantityInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQuantityInStock.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderDetailBindingSource, "Quantity", true));
             this.txtQuantityInStock.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantityInStock.Location = new System.Drawing.Point(368, 171);
             this.txtQuantityInStock.Name = "txtQuantityInStock";
@@ -212,6 +215,7 @@
             // txtOrder
             // 
             this.txtOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOrder.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderDetailBindingSource, "Order", true));
             this.txtOrder.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrder.Location = new System.Drawing.Point(127, 62);
             this.txtOrder.Name = "txtOrder";
@@ -255,23 +259,24 @@
             this.lblTitle.TabIndex = 14;
             this.lblTitle.Text = "Registro detalles de Orden";
             // 
-            // dataGridView1
+            // dgrOrderDetails
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgrOrderDetails.AutoGenerateColumns = false;
+            this.dgrOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrOrderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.orderDataGridViewTextBoxColumn,
             this.materialDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
             this.pricePerUnitDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.orderDetailBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(938, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(677, 400);
-            this.dataGridView1.TabIndex = 18;
+            this.dgrOrderDetails.DataSource = this.orderDetailBindingSource;
+            this.dgrOrderDetails.Location = new System.Drawing.Point(938, 45);
+            this.dgrOrderDetails.Name = "dgrOrderDetails";
+            this.dgrOrderDetails.RowHeadersWidth = 51;
+            this.dgrOrderDetails.RowTemplate.Height = 24;
+            this.dgrOrderDetails.Size = new System.Drawing.Size(677, 400);
+            this.dgrOrderDetails.TabIndex = 18;
+            this.dgrOrderDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrOrderDetails_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -323,17 +328,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(249)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1625, 493);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.bttNew);
+            this.Controls.Add(this.dgrOrderDetails);
+            this.Controls.Add(this.bttDelete);
+            this.Controls.Add(this.bttCancel);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bttSave);
             this.Controls.Add(this.grpData);
+            this.Controls.Add(this.bttUpdate);
             this.Controls.Add(this.pnlStyle1);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmOrderDetail";
             this.Text = "OrderDetail";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrderDetail_FormClosed);
+            this.Load += new System.EventHandler(this.frmOrderDetail_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrOrderDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -360,7 +371,7 @@
         private System.Windows.Forms.Button bttUpdate;
         private System.Windows.Forms.Button bttDelete;
         private System.Windows.Forms.Button bttSave;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrOrderDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn materialDataGridViewTextBoxColumn;
