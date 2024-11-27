@@ -146,6 +146,22 @@
     <Compile Include="Migrations\202411261739473_correctionMigration.Designer.cs">
       <DependentUpon>202411261739473_correctionMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411271246241_dataara.cs" />
+    <Compile Include="Migrations\202411271246241_dataara.Designer.cs">
+      <DependentUpon>202411271246241_dataara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411271444287_toolassignment.cs" />
+    <Compile Include="Migrations\202411271444287_toolassignment.Designer.cs">
+      <DependentUpon>202411271444287_toolassignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411271446453_maintenance.cs" />
+    <Compile Include="Migrations\202411271446453_maintenance.Designer.cs">
+      <DependentUpon>202411271446453_maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411271448466_service.cs" />
+    <Compile Include="Migrations\202411271448466_service.Designer.cs">
+      <DependentUpon>202411271448466_service.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
@@ -235,6 +251,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411261739473_correctionMigration.resx">
       <DependentUpon>202411261739473_correctionMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411271246241_dataara.resx">
+      <DependentUpon>202411271246241_dataara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411271444287_toolassignment.resx">
+      <DependentUpon>202411271444287_toolassignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411271446453_maintenance.resx">
+      <DependentUpon>202411271446453_maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411271448466_service.resx">
+      <DependentUpon>202411271448466_service.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>

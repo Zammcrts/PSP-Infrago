@@ -28,6 +28,7 @@ namespace PSP_Infrago
             {
                 machineryBindingSource.DataSource = dataContext.Machineries.ToList();
             }
+            grpData.Enabled = false;
             Machinery machinery = machineryBindingSource.Current as Machinery;
             if (machinery != null && machinery.Photo != null)
             {
@@ -41,6 +42,7 @@ namespace PSP_Infrago
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            grpData.Enabled = false;
             grdMachinery.Enabled = false;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
@@ -73,6 +75,8 @@ namespace PSP_Infrago
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            grpData.Enabled = true;
+            grpData.Enabled = true;
             grdMachinery.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
@@ -102,6 +106,7 @@ namespace PSP_Infrago
                     }
                 }
             }
+            grpData.Enabled = true;
             grdMachinery.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
@@ -113,19 +118,21 @@ namespace PSP_Infrago
         private void btnNew_Click(object sender, EventArgs e)
         {
             pctMachine.Image = null;
+            grpData.Enabled = true;
             grdMachinery.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
             btnNew.Enabled = false;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
-            machineryBindingSource.Add(new Tool());
+            machineryBindingSource.Add(new Machinery());
             machineryBindingSource.MoveLast();
             txtName.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            grpData.Enabled = false;
             grdMachinery.Enabled = false;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
@@ -153,6 +160,141 @@ namespace PSP_Infrago
                     }
                 }
             }
+        }
+
+        private void grdMachinery_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Machinery machinery = machineryBindingSource.Current as Machinery;
+            if (machinery != null && machinery.Photo != null)
+            {
+                pctMachine.Image = Image.FromFile(machinery.Photo);
+            }
+            else
+            {
+                pctMachine.Image = null;
+            }
+        }
+
+        private void btnUpload_Click_1(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog()
+            {
+                Filter = "JPEG|*.jpg"
+            })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    pctMachine.Image = Image.FromFile(ofd.FileName);
+                    Machinery machinery = machineryBindingSource.Current as Machinery;
+                    if (machinery != null)
+                    {
+                        machinery.Photo = ofd.FileName;
+                    }
+                }
+            }
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            grpData.Enabled = false;
+            grdMachinery.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnNew.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+            using (DataContext dc = new DataContext())
+            {
+                Machinery machinery = machineryBindingSource.Current as Machinery;
+                if (machinery != null)
+                {
+                    if (dc.Entry<Machinery>(machinery).State == EntityState.Detached)
+                    {
+                        dc.Set<Machinery>().Attach(machinery);
+                    }
+                    if (machinery.Id == 0)
+                    {
+                        dc.Entry<Machinery>(machinery).State = EntityState.Added;
+                    }
+                    else
+                    {
+                        dc.Entry<Machinery>(machinery).State = EntityState.Modified;
+                    }
+                    dc.SaveChanges();
+                    MessageBox.Show(this, "registro guardado :)");
+                    grdMachinery.Refresh();
+                }
+            }
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            grpData.Enabled = true;
+            grpData.Enabled = true;
+            grdMachinery.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            txtName.Focus();
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "¿Quieres eliminar el registro?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                using (DataContext dc = new DataContext())
+                {
+                    Machinery machinery = machineryBindingSource.Current as Machinery;
+                    if (machinery != null)
+                    {
+                        if (dc.Entry<Machinery>(machinery).State == EntityState.Detached)
+                        {
+                            dc.Set<Machinery>().Attach(machinery);
+                        }
+                        dc.Entry<Machinery>(machinery).State = EntityState.Deleted;
+                        dc.SaveChanges();
+                        MessageBox.Show(this, "Registro eliminado");
+                        pctMachine.Image = null;
+                    }
+                }
+            }
+            grpData.Enabled = true;
+            grdMachinery.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        private void btnNew_Click_1(object sender, EventArgs e)
+        {
+            pctMachine.Image = null;
+            grpData.Enabled = true;
+            grdMachinery.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            machineryBindingSource.Add(new Machinery());
+            machineryBindingSource.MoveLast();
+            txtName.Focus();
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            grpData.Enabled = false;
+            grdMachinery.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnNew.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+            machineryBindingSource.ResetBindings(false);
+            frmMachinery_Load(sender, e);
         }
     }
 }

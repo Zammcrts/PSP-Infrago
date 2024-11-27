@@ -29,6 +29,7 @@ namespace PSP_Infrago
             {
                 projectDetailsBindingSource.DataSource = dataContext.ProjectDetails.ToList();
             }
+            grpData.Enabled = false;
             ProjectDetails projectDetails = projectDetailsBindingSource.Current as ProjectDetails;
             if (projectDetails != null && projectDetails.Photo != null)
             {
@@ -42,6 +43,7 @@ namespace PSP_Infrago
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            grpData.Enabled = false;
             grdProjectDetails.Enabled = false;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
@@ -74,6 +76,8 @@ namespace PSP_Infrago
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            grpData.Enabled = true;
+            grpData.Enabled = true;
             grdProjectDetails.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
@@ -103,6 +107,7 @@ namespace PSP_Infrago
                     }
                 }
             }
+            grpData.Enabled = true;
             grdProjectDetails.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
@@ -114,19 +119,21 @@ namespace PSP_Infrago
         private void btnNew_Click(object sender, EventArgs e)
         {
             pctDetails.Image = null;
+            grpData.Enabled = true;
             grdProjectDetails.Enabled = false;
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
             btnNew.Enabled = false;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
-            projectDetailsBindingSource.Add(new Tool());
+            projectDetailsBindingSource.Add(new ProjectDetails());
             projectDetailsBindingSource.MoveLast();
             txtService.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            grpData.Enabled = false;
             grdProjectDetails.Enabled = false;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
@@ -138,6 +145,160 @@ namespace PSP_Infrago
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog()
+            {
+                Filter = "JPEG|*.jpg"
+            })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    pctDetails.Image = Image.FromFile(ofd.FileName);
+                    ProjectDetails projectDetails = projectDetailsBindingSource.Current as ProjectDetails;
+                    if (projectDetails != null)
+                    {
+                        projectDetails.Photo = ofd.FileName;
+                    }
+                }
+            }
+        }
+
+        private void grdProjectDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ProjectDetails projectDetails = projectDetailsBindingSource.Current as ProjectDetails;
+            if (projectDetails != null && projectDetails.Photo != null)
+            {
+                pctDetails.Image = Image.FromFile(projectDetails.Photo);
+            }
+            else
+            {
+                pctDetails.Image = null;
+            }
+        }
+
+        private void btnUpload_Click_1(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog()
+            {
+                Filter = "JPEG|*.jpg"
+            })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    pctDetails.Image = Image.FromFile(ofd.FileName);
+                    ProjectDetails projectDetails = projectDetailsBindingSource.Current as ProjectDetails;
+                    if (projectDetails != null)
+                    {
+                        projectDetails.Photo = ofd.FileName;
+                    }
+                }
+            }
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            grpData.Enabled = false;
+            grdProjectDetails.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnNew.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+            using (DataContext dc = new DataContext())
+            {
+                ProjectDetails projectDetails = projectDetailsBindingSource.Current as ProjectDetails;
+                if (projectDetails != null)
+                {
+                    if (dc.Entry<ProjectDetails>(projectDetails).State == EntityState.Detached)
+                    {
+                        dc.Set<ProjectDetails>().Attach(projectDetails);
+                    }
+                    if (projectDetails.Id == 0)
+                    {
+                        dc.Entry<ProjectDetails>(projectDetails).State = EntityState.Added;
+                    }
+                    else
+                    {
+                        dc.Entry<ProjectDetails>(projectDetails).State = EntityState.Modified;
+                    }
+                    dc.SaveChanges();
+                    MessageBox.Show(this, "registro guardado :)");
+                    grdProjectDetails.Refresh();
+                }
+            }
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            grpData.Enabled = true;
+            grpData.Enabled = true;
+            grdProjectDetails.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            txtService.Focus();
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "¿Quieres eliminar el registro?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                using (DataContext dc = new DataContext())
+                {
+                    ProjectDetails projectDetails = projectDetailsBindingSource.Current as ProjectDetails;
+                    if (projectDetails != null)
+                    {
+                        if (dc.Entry<ProjectDetails>(projectDetails).State == EntityState.Detached)
+                        {
+                            dc.Set<ProjectDetails>().Attach(projectDetails);
+                        }
+                        dc.Entry<ProjectDetails>(projectDetails).State = EntityState.Deleted;
+                        dc.SaveChanges();
+                        MessageBox.Show(this, "Registro eliminado");
+                        pctDetails.Image = null;
+                    }
+                }
+            }
+            grpData.Enabled = true;
+            grdProjectDetails.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        private void btnNew_Click_1(object sender, EventArgs e)
+        {
+            pctDetails.Image = null;
+            grpData.Enabled = true;
+            grdProjectDetails.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            projectDetailsBindingSource.Add(new ProjectDetails());
+            projectDetailsBindingSource.MoveLast();
+            txtService.Focus();
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            grpData.Enabled = false;
+            grdProjectDetails.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnNew.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+            projectDetailsBindingSource.ResetBindings(false);
+            frmProjectDetails_Load(sender, e);
+        }
+
+        private void btnUpload_Click_2(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog()
             {

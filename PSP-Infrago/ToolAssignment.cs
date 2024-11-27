@@ -23,6 +23,7 @@ namespace PSP_Infrago
 
         private void frmToolAssignment_Load(object sender, EventArgs e)
         {
+            grpData.Enabled = false;
             btnDelete.Enabled = false;
             btnSave.Enabled = false;
             using (DataContext dataContext = new DataContext())
@@ -120,7 +121,7 @@ namespace PSP_Infrago
             btnNew.Enabled = false;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
-            toolAssignmentBindingSource.Add(new Tool());
+            toolAssignmentBindingSource.Add(new ToolAssignment());
             toolAssignmentBindingSource.MoveLast();
             txtTool.Focus();
         }
@@ -138,6 +139,123 @@ namespace PSP_Infrago
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog()
+            {
+                Filter = "JPEG|*.jpg"
+            })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    pctAssignation.Image = Image.FromFile(ofd.FileName);
+                    ToolAssignment toolAssignment = toolAssignmentBindingSource.Current as ToolAssignment;
+                    if (toolAssignment != null)
+                    {
+                        toolAssignment.Photo = ofd.FileName;
+                    }
+                }
+            }
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            grdToolAssignment.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnNew.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+            using (DataContext dc = new DataContext())
+            {
+                ToolAssignment toolAssignment = toolAssignmentBindingSource.Current as ToolAssignment;
+                if (toolAssignment != null)
+                {
+                    if (dc.Entry<ToolAssignment>(toolAssignment).State == EntityState.Detached)
+                    {
+                        dc.Set<ToolAssignment>().Attach(toolAssignment);
+                    }
+                    if (toolAssignment.Id == 0)
+                    {
+                        dc.Entry<ToolAssignment>(toolAssignment).State = EntityState.Added;
+                    }
+                    else
+                    {
+                        dc.Entry<ToolAssignment>(toolAssignment).State = EntityState.Modified;
+                    }
+                    dc.SaveChanges();
+                    MessageBox.Show(this, "registro guardado :)");
+                    grdToolAssignment.Refresh();
+                }
+            }
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            grdToolAssignment.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            txtTool.Focus();
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "¿Quieres eliminar el registro?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                using (DataContext dc = new DataContext())
+                {
+                    ToolAssignment toolAssignment = toolAssignmentBindingSource.Current as ToolAssignment;
+                    if (toolAssignment != null)
+                    {
+                        if (dc.Entry<ToolAssignment>(toolAssignment).State == EntityState.Detached)
+                        {
+                            dc.Set<ToolAssignment>().Attach(toolAssignment);
+                        }
+                        dc.Entry<ToolAssignment>(toolAssignment).State = EntityState.Deleted;
+                        dc.SaveChanges();
+                        MessageBox.Show(this, "Registro eliminado");
+                        pctAssignation.Image = null;
+                    }
+                }
+            }
+            grdToolAssignment.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        private void btnNew_Click_1(object sender, EventArgs e)
+        {
+            pctAssignation.Image = null;
+            grpData.Enabled = true;
+            grdToolAssignment.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            toolAssignmentBindingSource.Add(new ToolAssignment());
+            toolAssignmentBindingSource.MoveLast();
+            txtProject.Focus();
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            grdToolAssignment.Enabled = false;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+            btnNew.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+            toolAssignmentBindingSource.ResetBindings(false);
+            frmToolAssignment_Load(sender, e);
+        }
+
+        private void btnUpload_Click_1(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog()
             {
