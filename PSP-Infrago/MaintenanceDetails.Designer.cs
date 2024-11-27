@@ -32,6 +32,7 @@
             this.lblMaintenancePicture = new System.Windows.Forms.Label();
             this.pctMaintenance = new System.Windows.Forms.PictureBox();
             this.dtpMaintenanceDetails = new System.Windows.Forms.DateTimePicker();
+            this.maintenanceDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.lblMaintenanceDate = new System.Windows.Forms.Label();
             this.lblManitenanceDetails = new System.Windows.Forms.Label();
             this.grdMaintenanceDetails = new System.Windows.Forms.DataGridView();
-            this.maintenanceDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maintenanceDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,8 +57,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctMaintenance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdMaintenanceDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMaintenanceDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMaintenancePicture
@@ -88,6 +88,10 @@
             this.dtpMaintenanceDetails.Name = "dtpMaintenanceDetails";
             this.dtpMaintenanceDetails.Size = new System.Drawing.Size(373, 32);
             this.dtpMaintenanceDetails.TabIndex = 53;
+            // 
+            // maintenanceDetailsBindingSource
+            // 
+            this.maintenanceDetailsBindingSource.DataSource = typeof(PSP_Infrago.Entities.MaintenanceDetails);
             // 
             // btnNew
             // 
@@ -254,10 +258,6 @@
             this.grdMaintenanceDetails.Size = new System.Drawing.Size(544, 525);
             this.grdMaintenanceDetails.TabIndex = 56;
             // 
-            // maintenanceDetailsBindingSource
-            // 
-            this.maintenanceDetailsBindingSource.DataSource = typeof(PSP_Infrago.Entities.MaintenanceDetails);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -356,11 +356,12 @@
             this.Controls.Add(this.lblMaintenanceDate);
             this.Controls.Add(this.lblManitenanceDetails);
             this.Name = "frmMaintenanceDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles de Mantenimiento";
             this.Load += new System.EventHandler(this.frmMaintenanceDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctMaintenance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdMaintenanceDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maintenanceDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMaintenanceDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -34,6 +34,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtDetails = new System.Windows.Forms.TextBox();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblDetails = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -43,14 +44,13 @@
             this.lblServiceID = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
             this.grdService = new System.Windows.Forms.DataGridView();
-            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grdService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdService)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNew
@@ -109,6 +109,10 @@
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.Size = new System.Drawing.Size(342, 32);
             this.txtDetails.TabIndex = 62;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataSource = typeof(PSP_Infrago.Entities.Service);
             // 
             // lblDetails
             // 
@@ -207,10 +211,6 @@
             this.grdService.TabIndex = 67;
             this.grdService.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // serviceBindingSource
-            // 
-            this.serviceBindingSource.DataSource = typeof(PSP_Infrago.Entities.Service);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -276,10 +276,11 @@
             this.Controls.Add(this.lblServiceID);
             this.Controls.Add(this.lblService);
             this.Name = "frmService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Servicio";
             this.Load += new System.EventHandler(this.frmService_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdService)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdService)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

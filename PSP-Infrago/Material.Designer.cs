@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpData = new System.Windows.Forms.GroupBox();
-            this.bttNew = new System.Windows.Forms.Button();
-            this.bttCancel = new System.Windows.Forms.Button();
-            this.bttUpdate = new System.Windows.Forms.Button();
-            this.bttDelete = new System.Windows.Forms.Button();
-            this.bttSave = new System.Windows.Forms.Button();
             this.txtPricePerUnit = new System.Windows.Forms.TextBox();
+            this.materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblPricePerUnit = new System.Windows.Forms.Label();
             this.txtQuantityInStock = new System.Windows.Forms.TextBox();
             this.lblQuantityInStock = new System.Windows.Forms.Label();
             this.txtMaterialName = new System.Windows.Forms.TextBox();
             this.lblMaterialName = new System.Windows.Forms.Label();
             this.lblProject = new System.Windows.Forms.Label();
+            this.bttNew = new System.Windows.Forms.Button();
+            this.bttCancel = new System.Windows.Forms.Button();
+            this.bttUpdate = new System.Windows.Forms.Button();
+            this.bttDelete = new System.Windows.Forms.Button();
+            this.bttSave = new System.Windows.Forms.Button();
             this.pnlStyle2 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -50,10 +51,9 @@
             this.materialNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pricePerUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterial)).BeginInit();
             this.SuspendLayout();
             // 
             // grpData
@@ -73,6 +73,79 @@
             this.grpData.TabIndex = 16;
             this.grpData.TabStop = false;
             this.grpData.Text = "Datos de la asignación del material";
+            // 
+            // txtPricePerUnit
+            // 
+            this.txtPricePerUnit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPricePerUnit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialBindingSource, "PricePerUnit", true));
+            this.txtPricePerUnit.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPricePerUnit.Location = new System.Drawing.Point(232, 174);
+            this.txtPricePerUnit.Name = "txtPricePerUnit";
+            this.txtPricePerUnit.Size = new System.Drawing.Size(138, 34);
+            this.txtPricePerUnit.TabIndex = 29;
+            // 
+            // materialBindingSource
+            // 
+            this.materialBindingSource.DataSource = typeof(PSP_Infrago.Entities.Material);
+            // 
+            // lblPricePerUnit
+            // 
+            this.lblPricePerUnit.AutoSize = true;
+            this.lblPricePerUnit.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPricePerUnit.Location = new System.Drawing.Point(23, 176);
+            this.lblPricePerUnit.Name = "lblPricePerUnit";
+            this.lblPricePerUnit.Size = new System.Drawing.Size(203, 26);
+            this.lblPricePerUnit.TabIndex = 28;
+            this.lblPricePerUnit.Text = "Precio por unidad:\r\n";
+            // 
+            // txtQuantityInStock
+            // 
+            this.txtQuantityInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQuantityInStock.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialBindingSource, "QuantityInStock", true));
+            this.txtQuantityInStock.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantityInStock.Location = new System.Drawing.Point(378, 121);
+            this.txtQuantityInStock.Name = "txtQuantityInStock";
+            this.txtQuantityInStock.Size = new System.Drawing.Size(530, 34);
+            this.txtQuantityInStock.TabIndex = 27;
+            // 
+            // lblQuantityInStock
+            // 
+            this.lblQuantityInStock.AutoSize = true;
+            this.lblQuantityInStock.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantityInStock.Location = new System.Drawing.Point(23, 124);
+            this.lblQuantityInStock.Name = "lblQuantityInStock";
+            this.lblQuantityInStock.Size = new System.Drawing.Size(339, 26);
+            this.lblQuantityInStock.TabIndex = 26;
+            this.lblQuantityInStock.Text = "Cantidad de material en stock:";
+            // 
+            // txtMaterialName
+            // 
+            this.txtMaterialName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaterialName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialBindingSource, "MaterialName", true));
+            this.txtMaterialName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaterialName.Location = new System.Drawing.Point(127, 60);
+            this.txtMaterialName.Name = "txtMaterialName";
+            this.txtMaterialName.Size = new System.Drawing.Size(781, 34);
+            this.txtMaterialName.TabIndex = 10;
+            // 
+            // lblMaterialName
+            // 
+            this.lblMaterialName.AutoSize = true;
+            this.lblMaterialName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterialName.Location = new System.Drawing.Point(23, 64);
+            this.lblMaterialName.Name = "lblMaterialName";
+            this.lblMaterialName.Size = new System.Drawing.Size(98, 26);
+            this.lblMaterialName.TabIndex = 3;
+            this.lblMaterialName.Text = "Material:";
+            // 
+            // lblProject
+            // 
+            this.lblProject.AutoSize = true;
+            this.lblProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProject.Location = new System.Drawing.Point(17, 64);
+            this.lblProject.Name = "lblProject";
+            this.lblProject.Size = new System.Drawing.Size(0, 26);
+            this.lblProject.TabIndex = 2;
             // 
             // bttNew
             // 
@@ -138,75 +211,6 @@
             this.bttSave.Text = "Guardar";
             this.bttSave.UseVisualStyleBackColor = false;
             this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
-            // 
-            // txtPricePerUnit
-            // 
-            this.txtPricePerUnit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPricePerUnit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialBindingSource, "PricePerUnit", true));
-            this.txtPricePerUnit.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPricePerUnit.Location = new System.Drawing.Point(232, 174);
-            this.txtPricePerUnit.Name = "txtPricePerUnit";
-            this.txtPricePerUnit.Size = new System.Drawing.Size(138, 34);
-            this.txtPricePerUnit.TabIndex = 29;
-            // 
-            // lblPricePerUnit
-            // 
-            this.lblPricePerUnit.AutoSize = true;
-            this.lblPricePerUnit.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPricePerUnit.Location = new System.Drawing.Point(23, 176);
-            this.lblPricePerUnit.Name = "lblPricePerUnit";
-            this.lblPricePerUnit.Size = new System.Drawing.Size(203, 26);
-            this.lblPricePerUnit.TabIndex = 28;
-            this.lblPricePerUnit.Text = "Precio por unidad:\r\n";
-            // 
-            // txtQuantityInStock
-            // 
-            this.txtQuantityInStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQuantityInStock.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialBindingSource, "QuantityInStock", true));
-            this.txtQuantityInStock.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantityInStock.Location = new System.Drawing.Point(378, 121);
-            this.txtQuantityInStock.Name = "txtQuantityInStock";
-            this.txtQuantityInStock.Size = new System.Drawing.Size(530, 34);
-            this.txtQuantityInStock.TabIndex = 27;
-            // 
-            // lblQuantityInStock
-            // 
-            this.lblQuantityInStock.AutoSize = true;
-            this.lblQuantityInStock.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantityInStock.Location = new System.Drawing.Point(23, 124);
-            this.lblQuantityInStock.Name = "lblQuantityInStock";
-            this.lblQuantityInStock.Size = new System.Drawing.Size(339, 26);
-            this.lblQuantityInStock.TabIndex = 26;
-            this.lblQuantityInStock.Text = "Cantidad de material en stock:";
-            // 
-            // txtMaterialName
-            // 
-            this.txtMaterialName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMaterialName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialBindingSource, "MaterialName", true));
-            this.txtMaterialName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaterialName.Location = new System.Drawing.Point(127, 60);
-            this.txtMaterialName.Name = "txtMaterialName";
-            this.txtMaterialName.Size = new System.Drawing.Size(781, 34);
-            this.txtMaterialName.TabIndex = 10;
-            // 
-            // lblMaterialName
-            // 
-            this.lblMaterialName.AutoSize = true;
-            this.lblMaterialName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterialName.Location = new System.Drawing.Point(23, 64);
-            this.lblMaterialName.Name = "lblMaterialName";
-            this.lblMaterialName.Size = new System.Drawing.Size(98, 26);
-            this.lblMaterialName.TabIndex = 3;
-            this.lblMaterialName.Text = "Material:";
-            // 
-            // lblProject
-            // 
-            this.lblProject.AutoSize = true;
-            this.lblProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProject.Location = new System.Drawing.Point(17, 64);
-            this.lblProject.Name = "lblProject";
-            this.lblProject.Size = new System.Drawing.Size(0, 26);
-            this.lblProject.TabIndex = 2;
             // 
             // pnlStyle2
             // 
@@ -284,10 +288,6 @@
             this.pricePerUnitDataGridViewTextBoxColumn.Name = "pricePerUnitDataGridViewTextBoxColumn";
             this.pricePerUnitDataGridViewTextBoxColumn.Width = 125;
             // 
-            // materialBindingSource
-            // 
-            this.materialBindingSource.DataSource = typeof(PSP_Infrago.Entities.Material);
-            // 
             // frmMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -305,13 +305,14 @@
             this.Controls.Add(this.pnlStyle1);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmMaterial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Material";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMaterial_FormClosed);
             this.Load += new System.EventHandler(this.frmMaterial_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

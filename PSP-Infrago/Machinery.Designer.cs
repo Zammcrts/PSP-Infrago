@@ -36,6 +36,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.pctMachine = new System.Windows.Forms.PictureBox();
             this.txtDetails = new System.Windows.Forms.TextBox();
+            this.machineryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblDetails = new System.Windows.Forms.Label();
             this.txtAssignation = new System.Windows.Forms.TextBox();
             this.lblAssignment = new System.Windows.Forms.Label();
@@ -49,9 +50,6 @@
             this.lblCode = new System.Windows.Forms.Label();
             this.lblMachinery = new System.Windows.Forms.Label();
             this.grdMachinery = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnUpload = new System.Windows.Forms.Button();
-            this.machineryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,9 +57,11 @@
             this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assignmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdMachinery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMachinery)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMachinePicture
@@ -139,6 +139,10 @@
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.Size = new System.Drawing.Size(342, 32);
             this.txtDetails.TabIndex = 49;
+            // 
+            // machineryBindingSource
+            // 
+            this.machineryBindingSource.DataSource = typeof(PSP_Infrago.Entities.Machinery);
             // 
             // lblDetails
             // 
@@ -277,34 +281,6 @@
             this.grdMachinery.Size = new System.Drawing.Size(557, 546);
             this.grdMachinery.TabIndex = 56;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(399, 730);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(180, 38);
-            this.btnCancel.TabIndex = 57;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnUpload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpload.Location = new System.Drawing.Point(755, 565);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(180, 38);
-            this.btnUpload.TabIndex = 58;
-            this.btnUpload.Text = "Cargar";
-            this.btnUpload.UseVisualStyleBackColor = false;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
-            // 
-            // machineryBindingSource
-            // 
-            this.machineryBindingSource.DataSource = typeof(PSP_Infrago.Entities.Machinery);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -361,6 +337,30 @@
             this.assignmentDataGridViewTextBoxColumn.Name = "assignmentDataGridViewTextBoxColumn";
             this.assignmentDataGridViewTextBoxColumn.Width = 125;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(399, 730);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(180, 38);
+            this.btnCancel.TabIndex = 57;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnUpload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Location = new System.Drawing.Point(755, 565);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(180, 38);
+            this.btnUpload.TabIndex = 58;
+            this.btnUpload.Text = "Cargar";
+            this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
             // frmMachinery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -389,11 +389,12 @@
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblMachinery);
             this.Name = "frmMachinery";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maquinaria";
             this.Load += new System.EventHandler(this.frmMachinery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdMachinery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMachinery)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

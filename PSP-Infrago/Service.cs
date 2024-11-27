@@ -31,7 +31,7 @@ namespace PSP_Infrago
             btnSave.Enabled = false;
             using (DataContext dataContext = new DataContext())
             {
-                serviceBindingSource.DataSource = dataContext.Tools.ToList();
+                serviceBindingSource.DataSource = dataContext.Services.ToList();
             }
             Service service = serviceBindingSource.Current as Service;
         }

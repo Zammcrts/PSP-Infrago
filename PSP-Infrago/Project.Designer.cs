@@ -32,11 +32,8 @@
             this.pnlStyle2 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.grpData = new System.Windows.Forms.GroupBox();
-            this.bttNew = new System.Windows.Forms.Button();
-            this.bttCancel = new System.Windows.Forms.Button();
-            this.bttUpdate = new System.Windows.Forms.Button();
-            this.bttDelete = new System.Windows.Forms.Button();
-            this.bttSave = new System.Windows.Forms.Button();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dttAssignationDate = new System.Windows.Forms.DateTimePicker();
             this.dttEndDate = new System.Windows.Forms.DateTimePicker();
             this.dttStartDate = new System.Windows.Forms.DateTimePicker();
@@ -50,9 +47,13 @@
             this.lblBudget = new System.Windows.Forms.Label();
             this.lblProject = new System.Windows.Forms.Label();
             this.lblClient = new System.Windows.Forms.Label();
+            this.bttNew = new System.Windows.Forms.Button();
+            this.bttCancel = new System.Windows.Forms.Button();
+            this.bttUpdate = new System.Windows.Forms.Button();
+            this.bttDelete = new System.Windows.Forms.Button();
+            this.bttSave = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgrProject = new System.Windows.Forms.DataGridView();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,10 +62,9 @@
             this.assignationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.budgetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrProject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrProject)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlStyle2
@@ -108,70 +108,19 @@
             this.grpData.TabStop = false;
             this.grpData.Text = "Datos del proyecto";
             // 
-            // bttNew
+            // cmbStatus
             // 
-            this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttNew.Location = new System.Drawing.Point(127, 599);
-            this.bttNew.Name = "bttNew";
-            this.bttNew.Size = new System.Drawing.Size(122, 33);
-            this.bttNew.TabIndex = 25;
-            this.bttNew.Text = "Nuevo";
-            this.bttNew.UseVisualStyleBackColor = false;
-            this.bttNew.Click += new System.EventHandler(this.bttNew_Click);
+            this.cmbStatus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectBindingSource, "Status", true));
+            this.cmbStatus.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(249, 397);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(637, 34);
+            this.cmbStatus.TabIndex = 14;
             // 
-            // bttCancel
+            // projectBindingSource
             // 
-            this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttCancel.Location = new System.Drawing.Point(547, 599);
-            this.bttCancel.Name = "bttCancel";
-            this.bttCancel.Size = new System.Drawing.Size(122, 33);
-            this.bttCancel.TabIndex = 24;
-            this.bttCancel.Text = "Cancelar";
-            this.bttCancel.UseVisualStyleBackColor = false;
-            this.bttCancel.Click += new System.EventHandler(this.bttCancel_Click);
-            // 
-            // bttUpdate
-            // 
-            this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttUpdate.Location = new System.Drawing.Point(409, 599);
-            this.bttUpdate.Name = "bttUpdate";
-            this.bttUpdate.Size = new System.Drawing.Size(122, 33);
-            this.bttUpdate.TabIndex = 23;
-            this.bttUpdate.Text = "Actualizar";
-            this.bttUpdate.UseVisualStyleBackColor = false;
-            this.bttUpdate.Click += new System.EventHandler(this.bttUpdate_Click);
-            // 
-            // bttDelete
-            // 
-            this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttDelete.Location = new System.Drawing.Point(689, 599);
-            this.bttDelete.Name = "bttDelete";
-            this.bttDelete.Size = new System.Drawing.Size(122, 33);
-            this.bttDelete.TabIndex = 22;
-            this.bttDelete.Text = "Eliminar";
-            this.bttDelete.UseVisualStyleBackColor = false;
-            this.bttDelete.Click += new System.EventHandler(this.bttDelete_Click);
-            // 
-            // bttSave
-            // 
-            this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
-            this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
-            this.bttSave.Location = new System.Drawing.Point(269, 599);
-            this.bttSave.Name = "bttSave";
-            this.bttSave.Size = new System.Drawing.Size(122, 33);
-            this.bttSave.TabIndex = 21;
-            this.bttSave.Text = "Guardar";
-            this.bttSave.UseVisualStyleBackColor = false;
-            this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
+            this.projectBindingSource.DataSource = typeof(PSP_Infrago.Entities.Project);
             // 
             // dttAssignationDate
             // 
@@ -306,6 +255,71 @@
             this.lblClient.TabIndex = 1;
             this.lblClient.Text = "Cliente:";
             // 
+            // bttNew
+            // 
+            this.bttNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttNew.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttNew.Location = new System.Drawing.Point(127, 599);
+            this.bttNew.Name = "bttNew";
+            this.bttNew.Size = new System.Drawing.Size(122, 33);
+            this.bttNew.TabIndex = 25;
+            this.bttNew.Text = "Nuevo";
+            this.bttNew.UseVisualStyleBackColor = false;
+            this.bttNew.Click += new System.EventHandler(this.bttNew_Click);
+            // 
+            // bttCancel
+            // 
+            this.bttCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttCancel.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttCancel.Location = new System.Drawing.Point(547, 599);
+            this.bttCancel.Name = "bttCancel";
+            this.bttCancel.Size = new System.Drawing.Size(122, 33);
+            this.bttCancel.TabIndex = 24;
+            this.bttCancel.Text = "Cancelar";
+            this.bttCancel.UseVisualStyleBackColor = false;
+            this.bttCancel.Click += new System.EventHandler(this.bttCancel_Click);
+            // 
+            // bttUpdate
+            // 
+            this.bttUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttUpdate.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttUpdate.Location = new System.Drawing.Point(409, 599);
+            this.bttUpdate.Name = "bttUpdate";
+            this.bttUpdate.Size = new System.Drawing.Size(122, 33);
+            this.bttUpdate.TabIndex = 23;
+            this.bttUpdate.Text = "Actualizar";
+            this.bttUpdate.UseVisualStyleBackColor = false;
+            this.bttUpdate.Click += new System.EventHandler(this.bttUpdate_Click);
+            // 
+            // bttDelete
+            // 
+            this.bttDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttDelete.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttDelete.Location = new System.Drawing.Point(689, 599);
+            this.bttDelete.Name = "bttDelete";
+            this.bttDelete.Size = new System.Drawing.Size(122, 33);
+            this.bttDelete.TabIndex = 22;
+            this.bttDelete.Text = "Eliminar";
+            this.bttDelete.UseVisualStyleBackColor = false;
+            this.bttDelete.Click += new System.EventHandler(this.bttDelete_Click);
+            // 
+            // bttSave
+            // 
+            this.bttSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(170)))), ((int)(((byte)(158)))));
+            this.bttSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttSave.Font = new System.Drawing.Font("Typo Grotesk", 11.2F);
+            this.bttSave.Location = new System.Drawing.Point(269, 599);
+            this.bttSave.Name = "bttSave";
+            this.bttSave.Size = new System.Drawing.Size(122, 33);
+            this.bttSave.TabIndex = 21;
+            this.bttSave.Text = "Guardar";
+            this.bttSave.UseVisualStyleBackColor = false;
+            this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
+            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -337,16 +351,6 @@
             this.dgrProject.Size = new System.Drawing.Size(728, 590);
             this.dgrProject.TabIndex = 9;
             this.dgrProject.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProject_CellContentClick);
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.projectBindingSource, "Status", true));
-            this.cmbStatus.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(249, 397);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(637, 34);
-            this.cmbStatus.TabIndex = 14;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -412,10 +416,6 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
-            // projectBindingSource
-            // 
-            this.projectBindingSource.DataSource = typeof(PSP_Infrago.Entities.Project);
-            // 
             // frmProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -433,13 +433,14 @@
             this.Controls.Add(this.grpData);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmProject";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmProject_FormClosed);
             this.Load += new System.EventHandler(this.frmProject_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrProject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrProject)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

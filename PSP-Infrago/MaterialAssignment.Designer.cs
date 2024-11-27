@@ -30,17 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpData = new System.Windows.Forms.GroupBox();
-            this.bttNew = new System.Windows.Forms.Button();
-            this.bttCancel = new System.Windows.Forms.Button();
-            this.bttUpdate = new System.Windows.Forms.Button();
-            this.bttDelete = new System.Windows.Forms.Button();
-            this.bttSave = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.materialAssignmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblQuantity = new System.Windows.Forms.Label();
             this.txtMaterial = new System.Windows.Forms.TextBox();
             this.txtProject = new System.Windows.Forms.TextBox();
             this.lblMaterial = new System.Windows.Forms.Label();
             this.lblProject = new System.Windows.Forms.Label();
+            this.bttNew = new System.Windows.Forms.Button();
+            this.bttCancel = new System.Windows.Forms.Button();
+            this.bttUpdate = new System.Windows.Forms.Button();
+            this.bttDelete = new System.Windows.Forms.Button();
+            this.bttSave = new System.Windows.Forms.Button();
             this.pnlStyle2 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -49,11 +50,10 @@
             this.projectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialAssignmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialAssignmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterialAssignment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialAssignmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterialAssignment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialAssignmentBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +73,70 @@
             this.grpData.TabIndex = 12;
             this.grpData.TabStop = false;
             this.grpData.Text = "Datos de la asignación del material";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQuantity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialAssignmentBindingSource, "Quantity", true));
+            this.txtQuantity.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(281, 170);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(603, 34);
+            this.txtQuantity.TabIndex = 27;
+            // 
+            // materialAssignmentBindingSource
+            // 
+            this.materialAssignmentBindingSource.DataSource = typeof(PSP_Infrago.Entities.MaterialAssignment);
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Location = new System.Drawing.Point(17, 172);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(244, 26);
+            this.lblQuantity.TabIndex = 26;
+            this.lblQuantity.Text = "Cantidad de material:";
+            // 
+            // txtMaterial
+            // 
+            this.txtMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMaterial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialAssignmentBindingSource, "Material", true));
+            this.txtMaterial.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaterial.Location = new System.Drawing.Point(132, 115);
+            this.txtMaterial.Name = "txtMaterial";
+            this.txtMaterial.Size = new System.Drawing.Size(752, 34);
+            this.txtMaterial.TabIndex = 10;
+            // 
+            // txtProject
+            // 
+            this.txtProject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProject.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialAssignmentBindingSource, "Project", true));
+            this.txtProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProject.Location = new System.Drawing.Point(132, 61);
+            this.txtProject.Name = "txtProject";
+            this.txtProject.Size = new System.Drawing.Size(752, 34);
+            this.txtProject.TabIndex = 9;
+            // 
+            // lblMaterial
+            // 
+            this.lblMaterial.AutoSize = true;
+            this.lblMaterial.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterial.Location = new System.Drawing.Point(17, 117);
+            this.lblMaterial.Name = "lblMaterial";
+            this.lblMaterial.Size = new System.Drawing.Size(98, 26);
+            this.lblMaterial.TabIndex = 3;
+            this.lblMaterial.Text = "Material:";
+            // 
+            // lblProject
+            // 
+            this.lblProject.AutoSize = true;
+            this.lblProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProject.Location = new System.Drawing.Point(17, 64);
+            this.lblProject.Name = "lblProject";
+            this.lblProject.Size = new System.Drawing.Size(109, 26);
+            this.lblProject.TabIndex = 2;
+            this.lblProject.Text = "Proyecto:";
             // 
             // bttNew
             // 
@@ -138,66 +202,6 @@
             this.bttSave.Text = "Guardar";
             this.bttSave.UseVisualStyleBackColor = false;
             this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQuantity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialAssignmentBindingSource, "Quantity", true));
-            this.txtQuantity.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(281, 170);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(603, 34);
-            this.txtQuantity.TabIndex = 27;
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(17, 172);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(244, 26);
-            this.lblQuantity.TabIndex = 26;
-            this.lblQuantity.Text = "Cantidad de material:";
-            // 
-            // txtMaterial
-            // 
-            this.txtMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMaterial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialAssignmentBindingSource, "Material", true));
-            this.txtMaterial.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaterial.Location = new System.Drawing.Point(132, 115);
-            this.txtMaterial.Name = "txtMaterial";
-            this.txtMaterial.Size = new System.Drawing.Size(752, 34);
-            this.txtMaterial.TabIndex = 10;
-            // 
-            // txtProject
-            // 
-            this.txtProject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProject.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.materialAssignmentBindingSource, "Project", true));
-            this.txtProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProject.Location = new System.Drawing.Point(132, 61);
-            this.txtProject.Name = "txtProject";
-            this.txtProject.Size = new System.Drawing.Size(752, 34);
-            this.txtProject.TabIndex = 9;
-            // 
-            // lblMaterial
-            // 
-            this.lblMaterial.AutoSize = true;
-            this.lblMaterial.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaterial.Location = new System.Drawing.Point(17, 117);
-            this.lblMaterial.Name = "lblMaterial";
-            this.lblMaterial.Size = new System.Drawing.Size(98, 26);
-            this.lblMaterial.TabIndex = 3;
-            this.lblMaterial.Text = "Material:";
-            // 
-            // lblProject
-            // 
-            this.lblProject.AutoSize = true;
-            this.lblProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProject.Location = new System.Drawing.Point(17, 64);
-            this.lblProject.Name = "lblProject";
-            this.lblProject.Size = new System.Drawing.Size(109, 26);
-            this.lblProject.TabIndex = 2;
-            this.lblProject.Text = "Proyecto:";
             // 
             // pnlStyle2
             // 
@@ -274,10 +278,6 @@
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.Width = 125;
             // 
-            // materialAssignmentBindingSource
-            // 
-            this.materialAssignmentBindingSource.DataSource = typeof(PSP_Infrago.Entities.MaterialAssignment);
-            // 
             // materialAssignmentBindingSource1
             // 
             this.materialAssignmentBindingSource1.DataSource = typeof(PSP_Infrago.Entities.MaterialAssignment);
@@ -299,13 +299,14 @@
             this.Controls.Add(this.bttUpdate);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmMaterialAssignment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaterialAssignment";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMaterialAssignment_FormClosed);
             this.Load += new System.EventHandler(this.frmMaterialAssignment_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterialAssignment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialAssignmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrMaterialAssignment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialAssignmentBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

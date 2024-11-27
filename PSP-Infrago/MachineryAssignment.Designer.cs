@@ -32,6 +32,7 @@
             this.lblMachinePicture = new System.Windows.Forms.Label();
             this.pctMachine = new System.Windows.Forms.PictureBox();
             this.dtpAssignation = new System.Windows.Forms.DateTimePicker();
+            this.machineryAssignmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.lblProject = new System.Windows.Forms.Label();
             this.lblMachineryAssignment = new System.Windows.Forms.Label();
             this.grdMachineryAssignment = new System.Windows.Forms.DataGridView();
-            this.machineryAssignmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assignationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +51,8 @@
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdMachineryAssignment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineryAssignmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMachineryAssignment)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMachinePicture
@@ -82,6 +82,10 @@
             this.dtpAssignation.Name = "dtpAssignation";
             this.dtpAssignation.Size = new System.Drawing.Size(373, 32);
             this.dtpAssignation.TabIndex = 67;
+            // 
+            // machineryAssignmentBindingSource
+            // 
+            this.machineryAssignmentBindingSource.DataSource = typeof(PSP_Infrago.Entities.MachineryAssignment);
             // 
             // btnNew
             // 
@@ -208,10 +212,6 @@
             this.grdMachineryAssignment.Size = new System.Drawing.Size(541, 484);
             this.grdMachineryAssignment.TabIndex = 70;
             // 
-            // machineryAssignmentBindingSource
-            // 
-            this.machineryAssignmentBindingSource.DataSource = typeof(PSP_Infrago.Entities.MachineryAssignment);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -290,11 +290,12 @@
             this.Controls.Add(this.lblProject);
             this.Controls.Add(this.lblMachineryAssignment);
             this.Name = "frmMachineryAssignment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignación de Maquinaria";
             this.Load += new System.EventHandler(this.frmMachineryAssignment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctMachine)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdMachineryAssignment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.machineryAssignmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMachineryAssignment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

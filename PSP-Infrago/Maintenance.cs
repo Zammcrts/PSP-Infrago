@@ -120,7 +120,7 @@ namespace PSP_Infrago
             btnNew.Enabled = false;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
-            maintenanceBindingSource.Add(new Tool());
+            maintenanceBindingSource.Add(new Maintenance());
             maintenanceBindingSource.MoveLast();
             txtMaintenanceType.Focus();
         }

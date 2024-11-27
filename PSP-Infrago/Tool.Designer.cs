@@ -36,6 +36,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.pctTool = new System.Windows.Forms.PictureBox();
             this.txtAssignation = new System.Windows.Forms.TextBox();
+            this.toolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblAssignment = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.lblToolID = new System.Windows.Forms.Label();
             this.lblTool = new System.Windows.Forms.Label();
             this.grdTools = new System.Windows.Forms.DataGridView();
-            this.toolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityAvailableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,8 +53,8 @@
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctTool)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdTools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTools)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProjectPicture
@@ -132,6 +132,10 @@
             this.txtAssignation.Name = "txtAssignation";
             this.txtAssignation.Size = new System.Drawing.Size(342, 32);
             this.txtAssignation.TabIndex = 67;
+            // 
+            // toolBindingSource
+            // 
+            this.toolBindingSource.DataSource = typeof(PSP_Infrago.Entities.Tool);
             // 
             // lblAssignment
             // 
@@ -230,10 +234,6 @@
             this.grdTools.Size = new System.Drawing.Size(605, 523);
             this.grdTools.TabIndex = 74;
             // 
-            // toolBindingSource
-            // 
-            this.toolBindingSource.DataSource = typeof(PSP_Infrago.Entities.Tool);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -314,11 +314,12 @@
             this.Controls.Add(this.lblToolID);
             this.Controls.Add(this.lblTool);
             this.Name = "frmTool";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Herramienta";
             this.Load += new System.EventHandler(this.frmTool_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctTool)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdTools)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTools)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

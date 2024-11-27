@@ -30,16 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpData = new System.Windows.Forms.GroupBox();
+            this.txtOrder = new System.Windows.Forms.TextBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblOrder = new System.Windows.Forms.Label();
+            this.txtDepartmentName = new System.Windows.Forms.TextBox();
+            this.lblDepartmentName = new System.Windows.Forms.Label();
+            this.lblProject = new System.Windows.Forms.Label();
             this.bttNew = new System.Windows.Forms.Button();
             this.bttCancel = new System.Windows.Forms.Button();
             this.bttUpdate = new System.Windows.Forms.Button();
             this.bttDelete = new System.Windows.Forms.Button();
             this.bttSave = new System.Windows.Forms.Button();
-            this.txtOrder = new System.Windows.Forms.TextBox();
-            this.lblOrder = new System.Windows.Forms.Label();
-            this.txtDepartmentName = new System.Windows.Forms.TextBox();
-            this.lblDepartmentName = new System.Windows.Forms.Label();
-            this.lblProject = new System.Windows.Forms.Label();
             this.pnlStyle2 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -47,10 +48,9 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrDepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // grpData
@@ -68,6 +68,59 @@
             this.grpData.TabIndex = 20;
             this.grpData.TabStop = false;
             this.grpData.Text = "Departamento responsable";
+            // 
+            // txtOrder
+            // 
+            this.txtOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOrder.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.departmentBindingSource, "Order", true));
+            this.txtOrder.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrder.Location = new System.Drawing.Point(233, 122);
+            this.txtOrder.Name = "txtOrder";
+            this.txtOrder.Size = new System.Drawing.Size(675, 34);
+            this.txtOrder.TabIndex = 27;
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataSource = typeof(PSP_Infrago.Entities.Department);
+            // 
+            // lblOrder
+            // 
+            this.lblOrder.AutoSize = true;
+            this.lblOrder.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrder.Location = new System.Drawing.Point(23, 124);
+            this.lblOrder.Name = "lblOrder";
+            this.lblOrder.Size = new System.Drawing.Size(204, 26);
+            this.lblOrder.TabIndex = 26;
+            this.lblOrder.Text = "Orden autorizada:";
+            // 
+            // txtDepartmentName
+            // 
+            this.txtDepartmentName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDepartmentName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.departmentBindingSource, "DepartmentName", true));
+            this.txtDepartmentName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartmentName.Location = new System.Drawing.Point(209, 60);
+            this.txtDepartmentName.Name = "txtDepartmentName";
+            this.txtDepartmentName.Size = new System.Drawing.Size(699, 34);
+            this.txtDepartmentName.TabIndex = 10;
+            // 
+            // lblDepartmentName
+            // 
+            this.lblDepartmentName.AutoSize = true;
+            this.lblDepartmentName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartmentName.Location = new System.Drawing.Point(23, 64);
+            this.lblDepartmentName.Name = "lblDepartmentName";
+            this.lblDepartmentName.Size = new System.Drawing.Size(171, 26);
+            this.lblDepartmentName.TabIndex = 3;
+            this.lblDepartmentName.Text = "Departamento:";
+            // 
+            // lblProject
+            // 
+            this.lblProject.AutoSize = true;
+            this.lblProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProject.Location = new System.Drawing.Point(17, 64);
+            this.lblProject.Name = "lblProject";
+            this.lblProject.Size = new System.Drawing.Size(0, 26);
+            this.lblProject.TabIndex = 2;
             // 
             // bttNew
             // 
@@ -133,55 +186,6 @@
             this.bttSave.Text = "Guardar";
             this.bttSave.UseVisualStyleBackColor = false;
             this.bttSave.Click += new System.EventHandler(this.bttSave_Click);
-            // 
-            // txtOrder
-            // 
-            this.txtOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtOrder.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.departmentBindingSource, "Order", true));
-            this.txtOrder.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrder.Location = new System.Drawing.Point(233, 122);
-            this.txtOrder.Name = "txtOrder";
-            this.txtOrder.Size = new System.Drawing.Size(675, 34);
-            this.txtOrder.TabIndex = 27;
-            // 
-            // lblOrder
-            // 
-            this.lblOrder.AutoSize = true;
-            this.lblOrder.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrder.Location = new System.Drawing.Point(23, 124);
-            this.lblOrder.Name = "lblOrder";
-            this.lblOrder.Size = new System.Drawing.Size(204, 26);
-            this.lblOrder.TabIndex = 26;
-            this.lblOrder.Text = "Orden autorizada:";
-            // 
-            // txtDepartmentName
-            // 
-            this.txtDepartmentName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDepartmentName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.departmentBindingSource, "DepartmentName", true));
-            this.txtDepartmentName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDepartmentName.Location = new System.Drawing.Point(209, 60);
-            this.txtDepartmentName.Name = "txtDepartmentName";
-            this.txtDepartmentName.Size = new System.Drawing.Size(699, 34);
-            this.txtDepartmentName.TabIndex = 10;
-            // 
-            // lblDepartmentName
-            // 
-            this.lblDepartmentName.AutoSize = true;
-            this.lblDepartmentName.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartmentName.Location = new System.Drawing.Point(23, 64);
-            this.lblDepartmentName.Name = "lblDepartmentName";
-            this.lblDepartmentName.Size = new System.Drawing.Size(171, 26);
-            this.lblDepartmentName.TabIndex = 3;
-            this.lblDepartmentName.Text = "Departamento:";
-            // 
-            // lblProject
-            // 
-            this.lblProject.AutoSize = true;
-            this.lblProject.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProject.Location = new System.Drawing.Point(17, 64);
-            this.lblProject.Name = "lblProject";
-            this.lblProject.Size = new System.Drawing.Size(0, 26);
-            this.lblProject.TabIndex = 2;
             // 
             // pnlStyle2
             // 
@@ -250,10 +254,6 @@
             this.orderDataGridViewTextBoxColumn.Name = "orderDataGridViewTextBoxColumn";
             this.orderDataGridViewTextBoxColumn.Width = 125;
             // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataSource = typeof(PSP_Infrago.Entities.Department);
-            // 
             // frmDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,13 +271,14 @@
             this.Controls.Add(this.bttUpdate);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmDepartment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Department";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDepartment_FormClosed);
             this.Load += new System.EventHandler(this.frmDepartment_Load);
             this.grpData.ResumeLayout(false);
             this.grpData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrDepartment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

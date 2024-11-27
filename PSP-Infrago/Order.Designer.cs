@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlStyle1 = new System.Windows.Forms.Panel();
             this.grpData = new System.Windows.Forms.GroupBox();
+            this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dttDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.dttOrdeDate = new System.Windows.Forms.DateTimePicker();
@@ -58,7 +59,6 @@
             this.detailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.providerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.grpData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrOrder)).BeginInit();
@@ -102,6 +102,16 @@
             this.grpData.TabIndex = 9;
             this.grpData.TabStop = false;
             this.grpData.Text = "Datos de la orden";
+            // 
+            // cmbDepartment
+            // 
+            this.cmbDepartment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "Department", true));
+            this.cmbDepartment.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDepartment.FormattingEnabled = true;
+            this.cmbDepartment.Location = new System.Drawing.Point(329, 334);
+            this.cmbDepartment.Name = "cmbDepartment";
+            this.cmbDepartment.Size = new System.Drawing.Size(554, 34);
+            this.cmbDepartment.TabIndex = 13;
             // 
             // orderBindingSource
             // 
@@ -371,16 +381,6 @@
             this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
             this.departmentDataGridViewTextBoxColumn.Width = 125;
             // 
-            // cmbDepartment
-            // 
-            this.cmbDepartment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "Department", true));
-            this.cmbDepartment.Font = new System.Drawing.Font("Typo Grotesk", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDepartment.FormattingEnabled = true;
-            this.cmbDepartment.Location = new System.Drawing.Point(329, 334);
-            this.cmbDepartment.Name = "cmbDepartment";
-            this.cmbDepartment.Size = new System.Drawing.Size(554, 34);
-            this.cmbDepartment.TabIndex = 13;
-            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -398,6 +398,7 @@
             this.Controls.Add(this.grpData);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrder_FormClosed);
             this.Load += new System.EventHandler(this.frmOrder_Load);
